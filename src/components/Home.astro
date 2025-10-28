@@ -1,1 +1,16 @@
+---
+
+---
+
 <h1>CVRAPIDO Curriculum Vitae rápido</h1>
+
+<script>
+  import { actions } from "astro:actions";
+
+  const call = async () => {
+    const { data, error } = await actions.getConversion();
+    !error && console.log(data);
+  };
+
+  call();
+</script>
