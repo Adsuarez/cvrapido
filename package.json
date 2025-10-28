@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "astro": "^5.15.1",
-    "pdf2json": "4.0.0"
+    "pdf2json": "4.0.0",
+    "pdfreader": "3.0.7"
   }
 }
