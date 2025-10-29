@@ -14,7 +14,7 @@ function printRows() {
     });
 }
 
-export async function readPDF() {
+export async function readLinealPdf() {
   new PdfReader().parseFileItems("./example.pdf", function (err, item) {
     if (!item || item.page) {
       // end of file, or page
