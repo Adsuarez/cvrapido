@@ -1,6 +1,6 @@
 import { defineAction } from "astro:actions";
 import { z } from "astro:schema";
-import { readLinealPdf } from "../files";
+import { readLinealPdf } from "../files/lineal-pdf";
 
 let result: string[] = [];
 export const server = {
