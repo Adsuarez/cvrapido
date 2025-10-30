@@ -1,4 +1,4 @@
-import { CONTACT_WORD, type Languages } from "@/files/consts";
+import { CONTACT_WORD, SKILL_WORD, type Languages } from "@/files/consts";
 
 class Word {
   text = "";
@@ -17,4 +17,10 @@ class Contact extends Word {
   }
 }
 
-export { Contact };
+class Skill extends Word {
+  constructor({ language }: { language: Languages }) {
+    super({ language });
+  }
+}
+
+export { Contact, Skill };
