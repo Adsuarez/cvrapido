@@ -11,10 +11,10 @@ class Word {
   }
 }
 
-class Contacts extends Word {
+class Contact extends Word {
   constructor({ language }: { language: Languages }) {
     super({ language });
   }
 }
 
-export { Contacts };
+export { Contact };

@@ -1,4 +1,4 @@
-import { Contacts } from "@/files/classes";
+import { Contact } from "@/files/classes";
 import { Languages } from "@/files/consts";
 
 export async function getContact({
@@ -8,7 +8,7 @@ export async function getContact({
   pdfParsed: string;
   language: Languages;
 }) {
-  const contact = new Contacts({ language });
+  const contact = new Contact({ language });
   console.log("\n\n----------", contact.text, "-----------\n\n");
   const contactIndex = pdfParsed.search(contact.regexp);
   if (contactIndex >= 0) {
