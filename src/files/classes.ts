@@ -1,11 +1,11 @@
-import { CONTACT_WORD, SKILL_WORD, type Languages } from "@/files/consts";
+import { WORD_SELECTOR, Languages, Words } from "@/files/consts";
 
 class Word {
   text = "";
   length = 0;
   regexp;
-  constructor({ language }: { language: Languages }) {
-    this.text = CONTACT_WORD[language];
+  constructor({ language, word }: { language: Languages; word: Words }) {
+    this.text = WORD_SELECTOR[word][language];
     this.length = this.text.length;
     this.regexp = new RegExp(this.text, "mui");
   }
@@ -13,13 +13,13 @@ class Word {
 
 class Contact extends Word {
   constructor({ language }: { language: Languages }) {
-    super({ language });
+    super({ language, word: Words.Contact });
   }
 }
 
 class Skill extends Word {
   constructor({ language }: { language: Languages }) {
-    super({ language });
+    super({ language, word: Words.Skill });
   }
 }
 
