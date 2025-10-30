@@ -22,16 +22,16 @@ const renderMatrix = (matrix) =>
 
 var table = new TableParser();
 
-new PdfReader().parseFileItems(filename, function (err, item) {
-  if (!item || item.page) {
-    // end of file, or page
-    console.log(renderMatrix(table.getMatrix()));
-    console.log("PAGE:", item.page);
-    table = new pdfreader.TableParser(); // new/clear table for next page
-  } else if (item.text) {
-    // accumulate text items into rows object, per line
-    table.processItem(item, columnQuantitizer(item));
-  }
-});
-
-export async function readColumnsPdf({ columns = 2 }) {}
+export async function readColumnsPdf({ columns = 2 }) {
+  new PdfReader().parseFileItems(filename, function (err, item) {
+    if (!item || item.page) {
+      // end of file, or page
+      console.log(renderMatrix(table.getMatrix()));
+      console.log("PAGE:", item.page);
+      table = new pdfreader.TableParser(); // new/clear table for next page
+    } else if (item.text) {
+      // accumulate text items into rows object, per line
+      table.processItem(item, columnQuantitizer(item));
+    }
+  });
+}
