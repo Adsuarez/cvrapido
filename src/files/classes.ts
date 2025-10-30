@@ -1,4 +1,5 @@
 import { WORD_SELECTOR, Languages, Words } from "@/files/consts";
+import { extractor } from "./utils/extractor";
 
 type ContactItems = {
   mobile?: string;
@@ -39,14 +40,7 @@ class LinkedInResume {
     skill: Skill;
     pdfParsed: string;
   }) {
-    const contactIndex = pdfParsed.search(contact.regexp);
-    const skillIndex = pdfParsed.search(skill.regexp);
-    const mobileIndex = pdfParsed.search("(Mobile)");
-    const allContact = pdfParsed.slice(contactIndex, skillIndex);
-    const mobile = allContact
-      .slice(contactIndex + contact.length, mobileIndex)
-      .replace("(", "")
-      .trim();
+    const { mobile } = extractor({ pdfParsed, contact, skill });
 
     this.contact = {
       mobile,
