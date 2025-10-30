@@ -4,7 +4,7 @@ import { readLinealPdf } from "../files/lineal-pdf";
 
 let result: string[] = [];
 export const server = {
-  getConversion: defineAction({
+  getLinealPdfConversion: defineAction({
     handler: async () => {
       await readLinealPdf().then((res) => {
         result = res;
