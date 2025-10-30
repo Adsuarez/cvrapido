@@ -8,4 +8,9 @@ const CONTACT_WORD = {
   [Languages.Spanish]: "contactar",
 };
 
-export { Languages, CONTACT_WORD };
+const SKILL_WORD = {
+  [Languages.English]: "top skills",
+  [Languages.Spanish]: "aptitudes principales",
+};
+
+export { Languages, CONTACT_WORD, SKILL_WORD };
