@@ -20,7 +20,7 @@ const renderMatrix = (matrix) =>
     .map((row, y) => padColumns(row, nbCols).map(mergeCells).join(" | "))
     .join("\n");
 
-var table = new TableParser();
+let table = new TableParser();
 
 export async function readColumnsPdf({ columns = 2 }) {
   new PdfReader().parseFileItems("./example.pdf", function (err, item) {
