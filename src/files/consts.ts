@@ -3,6 +3,11 @@ enum Languages {
   Spanish,
 }
 
+enum Words {
+  Contact,
+  Skill,
+}
+
 const CONTACT_WORD = {
   [Languages.English]: "contact",
   [Languages.Spanish]: "contactar",
@@ -13,4 +18,9 @@ const SKILL_WORD = {
   [Languages.Spanish]: "aptitudes principales",
 };
 
-export { Languages, CONTACT_WORD, SKILL_WORD };
+const WORD_SELECTOR = {
+  [Words.Contact]: CONTACT_WORD,
+  [Words.Skill]: SKILL_WORD,
+};
+
+export { Languages, Words, WORD_SELECTOR };
