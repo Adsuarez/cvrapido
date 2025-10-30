@@ -1,5 +1,7 @@
 import { WORD_SELECTOR, Languages, Words } from "@/files/consts";
 
+type ContactItems = string;
+
 class Word {
   text = "";
   length = 0;
@@ -23,4 +25,26 @@ class Skill extends Word {
   }
 }
 
-export { Contact, Skill };
+class LinkedInResume {
+  protected contact: ContactItems;
+
+  constructor({
+    contact,
+    skill,
+    pdfParsed,
+  }: {
+    contact: Contact;
+    skill: Skill;
+    pdfParsed: string;
+  }) {
+    const contactIndex = pdfParsed.search(contact.regexp);
+    const skillIndex = pdfParsed.search(skill.regexp);
+    this.contact = pdfParsed.slice(contactIndex, skillIndex);
+  }
+
+  get getContact() {
+    return this.contact;
+  }
+}
+
+export { Contact, Skill, LinkedInResume };
