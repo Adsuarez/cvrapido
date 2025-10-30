@@ -1,15 +1,5 @@
-import { CONTACT_WORD, Languages } from "../consts";
-
-class Contacts {
-  text = "";
-  length = 0;
-  regexp;
-  constructor({ language }: { language: Languages }) {
-    this.text = CONTACT_WORD[language];
-    this.length = this.text.length;
-    this.regexp = new RegExp(this.text, "mui");
-  }
-}
+import { Contacts } from "../classes";
+import { Languages } from "../consts";
 
 export async function getContact({
   pdfParsed,
