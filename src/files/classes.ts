@@ -1,6 +1,8 @@
 import { WORD_SELECTOR, Languages, Words } from "@/files/consts";
 
-type ContactItems = string;
+type ContactItems = {
+  mobile?: string;
+};
 
 class Word {
   text = "";
@@ -39,7 +41,16 @@ class LinkedInResume {
   }) {
     const contactIndex = pdfParsed.search(contact.regexp);
     const skillIndex = pdfParsed.search(skill.regexp);
-    this.contact = pdfParsed.slice(contactIndex, skillIndex);
+    const mobileIndex = pdfParsed.search("(Mobile)");
+    const allContact = pdfParsed.slice(contactIndex, skillIndex);
+    const mobile = allContact
+      .slice(contactIndex + contact.length, mobileIndex)
+      .replace("(", "")
+      .trim();
+
+    this.contact = {
+      mobile,
+    };
   }
 
   get getContact() {
