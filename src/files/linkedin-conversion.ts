@@ -1,5 +1,5 @@
-import type { Languages } from "./consts";
-import { getContact } from "./utils/get-contact";
+import type { Languages } from "@/files/consts";
+import { getContact } from "@/files/utils/get-contact";
 
 export async function linkedinConversion({
   pdfParsed,

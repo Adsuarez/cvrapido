@@ -1,4 +1,4 @@
-import { CONTACT_WORD, type Languages } from "./consts";
+import { CONTACT_WORD, type Languages } from "@/files/consts";
 
 class Contacts {
   text = "";

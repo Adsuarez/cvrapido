@@ -1,6 +1,6 @@
 import { PDFParse } from "pdf-parse";
-import { linkedinConversion } from "./linkedin-conversion";
-import { Languages } from "./consts";
+import { linkedinConversion } from "@/files/linkedin-conversion";
+import { Languages } from "@/files/consts";
 
 export async function parsePdf() {
   const parser = new PDFParse({ url: "./example2.pdf" });

@@ -1,5 +1,5 @@
-import { Contacts } from "../classes";
-import { Languages } from "../consts";
+import { Contacts } from "@/files/classes";
+import { Languages } from "@/files/consts";
 
 export async function getContact({
   pdfParsed,
