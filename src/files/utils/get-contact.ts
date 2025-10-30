@@ -1,16 +1,11 @@
-import { Languages } from "../consts";
-
-const contact = {
-  [Languages.English]: "contact",
-  [Languages.Spanish]: "contactar",
-};
+import { CONTACT_WORD, Languages } from "../consts";
 
 class Contacts {
   text = "";
   length = 0;
   regexp;
   constructor({ language }: { language: Languages }) {
-    this.text = contact[language];
+    this.text = CONTACT_WORD[language];
     this.length = this.text.length;
     this.regexp = new RegExp(this.text, "mui");
   }
