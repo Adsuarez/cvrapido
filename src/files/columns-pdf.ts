@@ -23,7 +23,7 @@ const renderMatrix = (matrix) =>
 var table = new TableParser();
 
 export async function readColumnsPdf({ columns = 2 }) {
-  new PdfReader().parseFileItems(filename, function (err, item) {
+  new PdfReader().parseFileItems("./example.pdf", function (err, item) {
     if (!item || item.page) {
       // end of file, or page
       console.log(renderMatrix(table.getMatrix()));
