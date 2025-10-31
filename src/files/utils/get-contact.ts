@@ -10,7 +10,12 @@ export async function getContact({
 }) {
   const contact = new Contact({ language });
   const skill = new Skill({ language });
-  const linkedinResume = new LinkedInResume({ contact, skill, pdfParsed });
+  const linkedinResume = new LinkedInResume({
+    contact,
+    skill,
+    pdfParsed,
+    language,
+  });
 
   console.log("\n\n----------", contact.text, "-----------\n\n");
   const contactItems = linkedinResume.getContact;
