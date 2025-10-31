@@ -11,5 +11,8 @@
   "dependencies": {
     "astro": "^5.15.1",
     "pdf-parse": "2.4.5"
+  },
+  "devDependencies": {
+    "vitest": "4.0.6"
   }
 }
