@@ -4,8 +4,11 @@ import { parsePdf } from "@/files/pdf-parse";
 
 export const server = {
   parsePdf: defineAction({
-    handler: async () => {
-      return await parsePdf();
+    input: z.object({
+      url: z.string(),
+    }),
+    handler: async (input) => {
+      return await parsePdf({ url: input.url });
     },
   }),
 };
