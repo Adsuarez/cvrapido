@@ -22,5 +22,11 @@ export function extractor({
     .replace("(", "")
     .trim();
 
-  return { mobile };
+  const emailIndex = allContact.search(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/im);
+  const linkedinUrlIndex = allContact.search("www.linkedin");
+  const email = allContact
+    .slice(emailIndex, linkedinUrlIndex)
+    .replaceAll("\n", "");
+
+  return { mobile, email };
 }
