@@ -5,10 +5,14 @@
 <h1>CVRAPIDO Curriculum Vitae rápido</h1>
 
 <script>
+  import { Languages } from "@/files/consts";
   import { actions } from "astro:actions";
 
   const call = async () => {
-    const { data, error } = await actions.parsePdf({ url: "./example3.pdf" });
+    const { data, error } = await actions.parsePdf({
+      url: "./example3.pdf",
+      language: Languages.English,
+    });
     !error && console.log(data);
   };
 
