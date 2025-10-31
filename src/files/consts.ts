@@ -8,6 +8,11 @@ enum Words {
   Skill,
 }
 
+const MOBILE_WORD = {
+  [Languages.English]: "(Mobile)",
+  [Languages.Spanish]: "(Mobile)",
+};
+
 const CONTACT_WORD = {
   [Languages.English]: "contact",
   [Languages.Spanish]: "contactar",
@@ -23,4 +28,4 @@ const WORD_SELECTOR = {
   [Words.Skill]: SKILL_WORD,
 };
 
-export { Languages, Words, WORD_SELECTOR };
+export { Languages, Words, WORD_SELECTOR, MOBILE_WORD };
