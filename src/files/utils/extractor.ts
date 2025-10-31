@@ -1,5 +1,5 @@
 import type { Contact, Skill } from "../classes";
-import { MOBILE_WORD, Languages } from "../consts";
+import { MOBILE_WORD, Languages, EMAIL_REGEXP } from "../consts";
 
 export function extractor({
   pdfParsed,
@@ -22,7 +22,7 @@ export function extractor({
     .replace("(", "")
     .trim();
 
-  const emailIndex = allContact.search(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/im);
+  const emailIndex = allContact.search(EMAIL_REGEXP);
   const linkedinUrlIndex = allContact.search("www.linkedin");
   const email = allContact
     .slice(emailIndex, linkedinUrlIndex)

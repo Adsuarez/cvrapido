@@ -8,6 +8,8 @@ enum Words {
   Skill,
 }
 
+const EMAIL_REGEXP = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/im);
+
 const MOBILE_WORD = {
   [Languages.English]: "(Mobile)",
   [Languages.Spanish]: "(Mobile)",
@@ -28,4 +30,4 @@ const WORD_SELECTOR = {
   [Words.Skill]: SKILL_WORD,
 };
 
-export { Languages, Words, WORD_SELECTOR, MOBILE_WORD };
+export { Languages, Words, WORD_SELECTOR, MOBILE_WORD, EMAIL_REGEXP };
