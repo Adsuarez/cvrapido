@@ -35,12 +35,14 @@ class LinkedInResume {
     contact,
     skill,
     pdfParsed,
+    language,
   }: {
     contact: Contact;
     skill: Skill;
     pdfParsed: string;
+    language: Languages;
   }) {
-    const { mobile } = extractor({ pdfParsed, contact, skill });
+    const { mobile } = extractor({ pdfParsed, contact, skill, language });
 
     this.contact = {
       mobile,
