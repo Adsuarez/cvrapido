@@ -17,10 +17,13 @@ export function extractor({
   const allContact = pdfParsed.slice(contactIndex, skillIndex);
 
   const mobileIndex = pdfParsed.search(MOBILE_WORD[language]);
-  const mobile = allContact
-    .slice(contactIndex + contact.length, mobileIndex)
-    .replace("(", "")
-    .trim();
+  const mobile =
+    mobileIndex >= 0
+      ? allContact
+          .slice(contactIndex + contact.length, mobileIndex)
+          .replace("(", "")
+          .trim()
+      : "";
 
   const emailIndex = allContact.search(EMAIL_REGEXP);
   const linkedinUrlIndex = allContact.search("www.linkedin");
