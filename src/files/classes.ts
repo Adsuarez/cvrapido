@@ -3,6 +3,7 @@ import { extractor } from "./utils/extractor";
 
 type ContactItems = {
   mobile?: string;
+  email?: string;
 };
 
 class Word {
@@ -42,10 +43,16 @@ class LinkedInResume {
     pdfParsed: string;
     language: Languages;
   }) {
-    const { mobile } = extractor({ pdfParsed, contact, skill, language });
+    const { mobile, email } = extractor({
+      pdfParsed,
+      contact,
+      skill,
+      language,
+    });
 
     this.contact = {
       mobile,
+      email,
     };
   }
 
