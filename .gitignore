@@ -23,8 +23,4 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-example.pdf
-
-example2.pdf
-
-example3.pdf
+example*.pdf
