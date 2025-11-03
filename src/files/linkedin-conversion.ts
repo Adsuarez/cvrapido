@@ -1,4 +1,4 @@
-import { getContact } from "@/files/utils/get-contact";
+import { getContact } from "@/files/utils/get-items";
 import { getLanguage } from "./utils/get-language";
 import {
   ERROR_MESSAGE,
