@@ -1,6 +1,6 @@
-import type { Contact, LanguagesSkill, Skill } from "../classes";
-import { Languages, EMAIL_REGEXP } from "../consts";
-import { MOBILE_WORD } from "../words/consts";
+import { Languages, EMAIL_REGEXP } from "@/files/consts.ts";
+import type { Contact, LanguagesSkill, Skill } from "@/files/words/classes.ts";
+import { MOBILE_WORD } from "@/files/words/consts.ts";
 
 export function extractor({
   pdfParsed,

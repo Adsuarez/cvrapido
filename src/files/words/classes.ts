@@ -1,5 +1,5 @@
-import type { Languages } from "../consts";
-import { WORD_SELECTOR, Words } from "./consts";
+import type { Languages } from "@/files/consts.ts";
+import { WORD_SELECTOR, Words } from "@/files/words/consts.ts";
 
 class Word {
   text = "";

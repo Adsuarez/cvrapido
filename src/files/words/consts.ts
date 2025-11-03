@@ -1,4 +1,4 @@
-import { Languages } from "../consts";
+import { Languages } from "@/files/consts.ts";
 
 enum Words {
   Contact,

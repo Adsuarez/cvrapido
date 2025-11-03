@@ -1,10 +1,10 @@
-import { getItems } from "@/files/utils/get-items";
-import { getLanguage } from "./utils/get-language";
+import { getItems } from "@/files/utils/get-items.ts";
+import { getLanguage } from "@/files/utils/get-language.ts";
 import {
   ERROR_MESSAGE,
   type ConversionResponseData,
   type ConversionResponseError,
-} from "./consts";
+} from "@/files/consts.ts";
 
 export async function linkedinConversion({ pdfParsed }: { pdfParsed: string }) {
   console.log(pdfParsed);

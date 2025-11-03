@@ -1,7 +1,7 @@
-import { Languages } from "@/files/consts";
-import { extractor } from "./utils/extractor";
-import { CONTACT_WORD } from "./words/consts";
-import type { Contact, LanguagesSkill, Skill } from "./words/classes";
+import { Languages } from "@/files/consts.ts";
+import { extractor } from "@/files/utils/extractor.ts";
+import { CONTACT_WORD } from "@/files/words/consts.ts";
+import type { Contact, LanguagesSkill, Skill } from "@/files/words/classes.ts";
 
 type ContactItems = {
   mobile?: string;
