@@ -55,9 +55,15 @@ class Skill extends Word {
   }
 }
 
+class LanguagesSkill extends Word {
+  constructor({ language }: { language: Languages }) {
+    super({ language, word: Words.Languages });
+  }
+}
+
 class LinkedInResume {
   protected contact: ContactItems;
-  protected topSkills: TopSkills;
+  //protected topSkills: TopSkills;
 
   constructor({
     contact,
@@ -88,4 +94,4 @@ class LinkedInResume {
   }
 }
 
-export { Contact, Skill, LinkedInResume, Language };
+export { Contact, Skill, LinkedInResume, Language, LanguagesSkill };
