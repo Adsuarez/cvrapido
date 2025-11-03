@@ -12,8 +12,8 @@ export async function linkedinConversion({ pdfParsed }: { pdfParsed: string }) {
   let data: ConversionResponseData = {};
   let error: ConversionResponseError = ERROR_MESSAGE.NOT_IS_LINKEDIN;
   if (!language) return { data, error };
-  const { contactItems } = await getItems({ pdfParsed, language });
+  const { contactItems, topSkills } = await getItems({ pdfParsed, language });
   error = null;
-  data = { contactItems };
+  data = { contactItems, topSkills };
   return { data, error };
 }
