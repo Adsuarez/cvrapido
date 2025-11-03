@@ -10,7 +10,8 @@ export const server = {
       language: z.nativeEnum(Languages),
     }),
     handler: async (input) => {
-      return await parsePdf({ url: input.url, language: input.language });
+      const { url, language } = input;
+      return await parsePdf({ url, language });
     },
   }),
 };
