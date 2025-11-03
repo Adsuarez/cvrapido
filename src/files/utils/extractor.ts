@@ -1,5 +1,6 @@
 import type { Contact, LanguagesSkill, Skill } from "../classes";
-import { MOBILE_WORD, Languages, EMAIL_REGEXP } from "../consts";
+import { Languages, EMAIL_REGEXP } from "../consts";
+import { MOBILE_WORD } from "../words/consts";
 
 export function extractor({
   pdfParsed,
