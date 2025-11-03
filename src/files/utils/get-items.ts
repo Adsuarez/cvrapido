@@ -1,4 +1,9 @@
-import { Contact, LinkedInResume, Skill } from "@/files/classes";
+import {
+  Contact,
+  LanguagesSkill,
+  LinkedInResume,
+  Skill,
+} from "@/files/classes";
 import type { Languages } from "../consts";
 
 export async function getItems({
@@ -10,9 +15,11 @@ export async function getItems({
 }) {
   const contact = new Contact({ language });
   const skill = new Skill({ language });
+  const languagesSkill = new LanguagesSkill({ language });
   const linkedinResume = new LinkedInResume({
     contact,
     skill,
+    languagesSkill,
     pdfParsed,
     language,
   });
