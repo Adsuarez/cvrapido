@@ -19,5 +19,5 @@ export async function getContact({
 
   console.log("\n\n----------", contact.text, "-----------\n\n");
   const contactItems = linkedinResume.getContact;
-  console.log({ contactItems });
+  return { contactItems };
 }
