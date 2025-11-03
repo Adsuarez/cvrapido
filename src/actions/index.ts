@@ -1,6 +1,7 @@
 import { defineAction } from "astro:actions";
 import { z } from "astro:schema";
 import { parsePdf } from "@/files/pdf-parse";
+import type { ConversionResponse } from "@/files/consts";
 
 export const server = {
   parsePdf: defineAction({
@@ -9,7 +10,8 @@ export const server = {
     }),
     handler: async (input) => {
       const { url } = input;
-      return await parsePdf({ url });
+      const { data, error }: ConversionResponse = await parsePdf({ url });
+      if (!error) return data;
     },
   }),
 };
