@@ -6,6 +6,12 @@ type ContactItems = {
   email?: string;
 };
 
+type TopSkills = {
+  skill1?: string;
+  skill2?: string;
+  skill3?: string;
+} | null;
+
 class Language {
   is: Languages | null = Languages.Spanish;
   constructor({ pdfParsed }: { pdfParsed: string }) {
@@ -51,6 +57,7 @@ class Skill extends Word {
 
 class LinkedInResume {
   protected contact: ContactItems;
+  protected topSkills: TopSkills;
 
   constructor({
     contact,
