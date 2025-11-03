@@ -5,6 +5,11 @@ export type ConversionResponse = {
   error: ConversionResponseError;
 };
 
+const ERROR_MESSAGE = {
+  NOT_IS_LINKEDIN:
+    "The document provided is not compatible with a LinkedIn resume PDF",
+};
+
 enum Languages {
   English = "english",
   Spanish = "spanish",
@@ -44,4 +49,5 @@ export {
   MOBILE_WORD,
   EMAIL_REGEXP,
   CONTACT_WORD,
+  ERROR_MESSAGE,
 };
