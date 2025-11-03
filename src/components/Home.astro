@@ -10,7 +10,7 @@
 
   const call = async () => {
     const { data, error } = await actions.parsePdf({
-      url: "./example3.pdf",
+      url: "./public/example3.pdf",
       language: Languages.English,
     });
     !error && console.log(data);
