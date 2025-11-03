@@ -1,5 +1,5 @@
 import { Contact, LinkedInResume, Skill } from "@/files/classes";
-import { Languages } from "@/files/consts";
+import type { Languages } from "../consts";
 
 export async function getContact({
   pdfParsed,
