@@ -1,6 +1,6 @@
 enum Languages {
-  English,
-  Spanish,
+  English = "english",
+  Spanish = "spanish",
 }
 
 enum Words {
@@ -30,4 +30,11 @@ const WORD_SELECTOR = {
   [Words.Skill]: SKILL_WORD,
 };
 
-export { Languages, Words, WORD_SELECTOR, MOBILE_WORD, EMAIL_REGEXP };
+export {
+  Languages,
+  Words,
+  WORD_SELECTOR,
+  MOBILE_WORD,
+  EMAIL_REGEXP,
+  CONTACT_WORD,
+};
