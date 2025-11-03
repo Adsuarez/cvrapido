@@ -63,23 +63,26 @@ class LanguagesSkill extends Word {
 
 class LinkedInResume {
   protected contact: ContactItems;
-  //protected topSkills: TopSkills;
+  protected topSkills: TopSkills;
 
   constructor({
     contact,
     skill,
+    languagesSkill,
     pdfParsed,
     language,
   }: {
     contact: Contact;
     skill: Skill;
+    languagesSkill: LanguagesSkill;
     pdfParsed: string;
     language: Languages;
   }) {
-    const { mobile, email } = extractor({
+    const { mobile, email, skills } = extractor({
       pdfParsed,
       contact,
       skill,
+      languagesSkill,
       language,
     });
 
@@ -87,10 +90,22 @@ class LinkedInResume {
       mobile,
       email,
     };
+
+    const [skill1, skill2, skill3] = skills;
+
+    this.topSkills = {
+      skill1,
+      skill2,
+      skill3,
+    };
   }
 
   get getContact() {
     return this.contact;
+  }
+
+  get getSkills() {
+    return this.topSkills;
   }
 }
 
