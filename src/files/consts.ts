@@ -18,6 +18,7 @@ enum Languages {
 enum Words {
   Contact,
   Skill,
+  Languages,
 }
 
 const EMAIL_REGEXP = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/im);
@@ -37,9 +38,15 @@ const SKILL_WORD = {
   [Languages.Spanish]: "aptitudes principales",
 };
 
+const LANGUAGE_WORD = {
+  [Languages.English]: "languages",
+  [Languages.Spanish]: "languages",
+};
+
 const WORD_SELECTOR = {
   [Words.Contact]: CONTACT_WORD,
   [Words.Skill]: SKILL_WORD,
+  [Words.Languages]: LANGUAGE_WORD,
 };
 
 export {
