@@ -1,13 +1,10 @@
-import type { Languages } from "@/files/consts";
 import { getContact } from "@/files/utils/get-contact";
+import { getLanguage } from "./utils/get-language";
 
-export async function linkedinConversion({
-  pdfParsed,
-  language,
-}: {
-  pdfParsed: string;
-  language: Languages;
-}) {
+export async function linkedinConversion({ pdfParsed }: { pdfParsed: string }) {
   console.log(pdfParsed);
-  await getContact({ pdfParsed, language });
+  const language = await getLanguage({ pdfParsed });
+  if (language) {
+    await getContact({ pdfParsed, language });
+  }
 }
