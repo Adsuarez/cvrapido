@@ -1,3 +1,10 @@
+export type ConversionResponseError = string | null;
+export type ConversionResponseData = {};
+export type ConversionResponse = {
+  data: ConversionResponseData;
+  error: ConversionResponseError;
+};
+
 enum Languages {
   English = "english",
   Spanish = "spanish",
