@@ -1,4 +1,4 @@
-import { getContact } from "@/files/utils/get-items";
+import { getItems } from "@/files/utils/get-items";
 import { getLanguage } from "./utils/get-language";
 import {
   ERROR_MESSAGE,
@@ -12,7 +12,7 @@ export async function linkedinConversion({ pdfParsed }: { pdfParsed: string }) {
   let data: ConversionResponseData = {};
   let error: ConversionResponseError = ERROR_MESSAGE.NOT_IS_LINKEDIN;
   if (!language) return { data, error };
-  const { contactItems } = await getContact({ pdfParsed, language });
+  const { contactItems } = await getItems({ pdfParsed, language });
   error = null;
   data = { contactItems };
   return { data, error };
