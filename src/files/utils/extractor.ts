@@ -1,14 +1,16 @@
-import type { Contact, Skill } from "../classes";
+import type { Contact, LanguagesSkill, Skill } from "../classes";
 import { MOBILE_WORD, Languages, EMAIL_REGEXP } from "../consts";
 
 export function extractor({
   pdfParsed,
   contact,
   skill,
+  languagesSkill,
   language,
 }: {
   contact: Contact;
   skill: Skill;
+  languagesSkill: LanguagesSkill;
   pdfParsed: string;
   language: Languages;
 }) {
@@ -31,5 +33,11 @@ export function extractor({
     .slice(emailIndex, linkedinUrlIndex)
     .replaceAll("\n", "");
 
-  return { mobile, email };
+  const languagesSkillIndex = pdfParsed.search(languagesSkill.regexp);
+  const skills = pdfParsed
+    .slice(skillIndex + skill.length, languagesSkillIndex)
+    .trim()
+    .split("\n");
+
+  return { mobile, email, skills };
 }
