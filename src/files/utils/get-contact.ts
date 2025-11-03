@@ -16,8 +16,6 @@ export async function getContact({
     pdfParsed,
     language,
   });
-
-  console.log("\n\n----------", contact.text, "-----------\n\n");
   const contactItems = linkedinResume.getContact;
   return { contactItems };
 }
