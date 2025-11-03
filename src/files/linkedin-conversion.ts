@@ -1,17 +1,16 @@
 import { getContact } from "@/files/utils/get-contact";
 import { getLanguage } from "./utils/get-language";
-import type {
-  ConversionResponse,
-  ConversionResponseData,
-  ConversionResponseError,
+import {
+  ERROR_MESSAGE,
+  type ConversionResponseData,
+  type ConversionResponseError,
 } from "./consts";
 
 export async function linkedinConversion({ pdfParsed }: { pdfParsed: string }) {
   console.log(pdfParsed);
   const language = await getLanguage({ pdfParsed });
   let data: ConversionResponseData = {};
-  let error: ConversionResponseError =
-    "The document provided is not compatible with a LinkedIn resume PDF";
+  let error: ConversionResponseError = ERROR_MESSAGE.NOT_IS_LINKEDIN;
   if (!language) return { data, error };
   const { contactItems } = await getContact({ pdfParsed, language });
   error = null;
