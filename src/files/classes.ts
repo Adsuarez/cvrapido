@@ -1,4 +1,4 @@
-import { WORD_SELECTOR, Languages, Words } from "@/files/consts";
+import { WORD_SELECTOR, Languages, Words, CONTACT_WORD } from "@/files/consts";
 import { extractor } from "./utils/extractor";
 
 type ContactItems = {
@@ -6,6 +6,26 @@ type ContactItems = {
   email?: string;
 };
 
+class Language {
+  is: Languages | null = Languages.Spanish;
+  constructor({ pdfParsed }: { pdfParsed: string }) {
+    console.log("heeeeeeeeeeeeeeeeeeereeeeeeeeeeeeeeeeeeee: \n");
+    let word = CONTACT_WORD[Languages.Spanish];
+    let wordWithRegExp = new RegExp(word, "mui");
+    let indexOfWord = pdfParsed.search(wordWithRegExp);
+    console.log(indexOfWord);
+    if (indexOfWord < 0) {
+      word = CONTACT_WORD[Languages.English];
+      let wordWithRegExp = new RegExp(word, "mui");
+      let indexOfWord = pdfParsed.search(wordWithRegExp);
+      if (indexOfWord < 0) {
+        this.is = null;
+      } else {
+        this.is = Languages.English;
+      }
+    }
+  }
+}
 class Word {
   text = "";
   length = 0;
@@ -61,4 +81,4 @@ class LinkedInResume {
   }
 }
 
-export { Contact, Skill, LinkedInResume };
+export { Contact, Skill, LinkedInResume, Language };
