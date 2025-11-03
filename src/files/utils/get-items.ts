@@ -24,5 +24,6 @@ export async function getItems({
     language,
   });
   const contactItems = linkedinResume.getContact;
-  return { contactItems };
+  const topSkills = linkedinResume.getSkills;
+  return { contactItems, topSkills };
 }
