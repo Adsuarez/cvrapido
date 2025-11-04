@@ -1,4 +1,4 @@
-import { LanguageOfPdf } from "@/files/classes.ts";
+import { LanguageOfPdf } from "@/files/metadata/language-of-pdf.ts";
 
 export async function getLanguage({ pdfParsed }: { pdfParsed: string }) {
   const language = new LanguageOfPdf({ pdfParsed });
