@@ -10,11 +10,11 @@ export async function getItems({
   language: Languages;
 }) {
   const contactWord = new ContactWord({ language });
-  const skill = new SkillWord({ language });
+  const skillWord = new SkillWord({ language });
   const languagesWord = new LanguagesWord({ language });
   const linkedinResume = new LinkedInResume({
     contactWord,
-    skill,
+    skillWord,
     languagesWord,
     pdfParsed,
     language,
