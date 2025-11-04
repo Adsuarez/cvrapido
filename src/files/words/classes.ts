@@ -30,4 +30,10 @@ class LanguagesWord extends Word {
   }
 }
 
-export { ContactWord, SkillWord, LanguagesWord };
+class ExperienceWord extends Word {
+  constructor({ language }: { language: Languages }) {
+    super({ language, word: Words.Experience });
+  }
+}
+
+export { ContactWord, SkillWord, LanguagesWord, ExperienceWord };
