@@ -18,7 +18,7 @@ class ContactWord extends Word {
   }
 }
 
-class Skill extends Word {
+class SkillWord extends Word {
   constructor({ language }: { language: Languages }) {
     super({ language, word: Words.Skill });
   }
@@ -30,4 +30,4 @@ class LanguagesSkill extends Word {
   }
 }
 
-export { ContactWord, Skill, LanguagesSkill };
+export { ContactWord, SkillWord, LanguagesSkill };

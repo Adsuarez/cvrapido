@@ -4,7 +4,7 @@ import { CONTACT_WORD } from "@/files/words/consts.ts";
 import type {
   ContactWord,
   LanguagesSkill,
-  Skill,
+  SkillWord,
 } from "@/files/words/classes.ts";
 
 type ContactItems = {
@@ -51,7 +51,7 @@ class LinkedInResume {
     language,
   }: {
     contact: ContactWord;
-    skill: Skill;
+    skill: SkillWord;
     languagesSkill: LanguagesSkill;
     pdfParsed: string;
     language: Languages;
