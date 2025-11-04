@@ -8,18 +8,18 @@ import { MOBILE_WORD } from "@/files/words/consts.ts";
 
 export function extractor({
   pdfParsed,
-  contact,
+  contactWord,
   skill,
   languagesWord,
   language,
 }: {
-  contact: ContactWord;
+  contactWord: ContactWord;
   skill: SkillWord;
   languagesWord: LanguagesWord;
   pdfParsed: string;
   language: Languages;
 }) {
-  const contactIndex = pdfParsed.search(contact.regexp);
+  const contactIndex = pdfParsed.search(contactWord.regexp);
   const skillIndex = pdfParsed.search(skill.regexp);
   const allContact = pdfParsed.slice(contactIndex, skillIndex);
 
@@ -27,7 +27,7 @@ export function extractor({
   const mobile =
     mobileIndex >= 0
       ? allContact
-          .slice(contactIndex + contact.length, mobileIndex)
+          .slice(contactIndex + contactWord.length, mobileIndex)
           .replace("(", "")
           .trim()
       : "";

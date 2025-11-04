@@ -23,13 +23,13 @@ class LinkedInResume {
   protected topSkills: TopSkills;
 
   constructor({
-    contact,
+    contactWord,
     skill,
     languagesWord,
     pdfParsed,
     language,
   }: {
-    contact: ContactWord;
+    contactWord: ContactWord;
     skill: SkillWord;
     languagesWord: LanguagesWord;
     pdfParsed: string;
@@ -37,7 +37,7 @@ class LinkedInResume {
   }) {
     const { mobile, email, skills } = extractor({
       pdfParsed,
-      contact,
+      contactWord,
       skill,
       languagesWord,
       language,
