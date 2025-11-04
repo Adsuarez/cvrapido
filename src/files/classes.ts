@@ -1,7 +1,11 @@
 import { Languages } from "@/files/consts.ts";
 import { extractor } from "@/files/utils/extractor.ts";
 import { CONTACT_WORD } from "@/files/words/consts.ts";
-import type { Contact, LanguagesSkill, Skill } from "@/files/words/classes.ts";
+import type {
+  ContactWord,
+  LanguagesSkill,
+  Skill,
+} from "@/files/words/classes.ts";
 
 type ContactItems = {
   mobile?: string;
@@ -46,7 +50,7 @@ class LinkedInResume {
     pdfParsed,
     language,
   }: {
-    contact: Contact;
+    contact: ContactWord;
     skill: Skill;
     languagesSkill: LanguagesSkill;
     pdfParsed: string;
