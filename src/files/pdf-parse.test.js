@@ -1,9 +1,14 @@
-import { expect, test } from 'vitest'
+import { expect, test, describe } from 'vitest'
+import {parsePdf} from "@/files/pdf-parse.ts"
 
-export function sum(a, b) {
-  return a + b
-}
-
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3)
+describe("Reading linkedin resume with", ()=>{
+  test("Mobile number and email should return mobile and email strings with length greater than cero", async ()=>{
+    const {data, error} = await parsePdf({url: "./public/example2.pdf"})
+    if(!error){
+      const mobileLength = data?.contactItems?.mobile?.length
+      const emailLength =  data?.contactItems?.email?.length
+      expect(mobileLength).toBeGreaterThan(0)
+      expect(emailLength).toBeGreaterThan(0)
+    }
+  })
 })
