@@ -1,6 +1,7 @@
 import { Languages, EMAIL_REGEXP } from "@/files/consts.ts";
 import type {
   ContactWord,
+  ExperienceWord,
   LanguagesWord,
   SkillWord,
 } from "@/files/words/classes.ts";
@@ -11,11 +12,13 @@ export function extractor({
   contactWord,
   skillWord,
   languagesWord,
+  experienceWord,
   language,
 }: {
   contactWord: ContactWord;
   skillWord: SkillWord;
   languagesWord: LanguagesWord;
+  experienceWord: ExperienceWord;
   pdfParsed: string;
   language: Languages;
 }) {
@@ -43,6 +46,13 @@ export function extractor({
     .slice(skillIndex + skillWord.length, languagesSkillIndex)
     .trim()
     .split("\n");
+
+  const experienceIndex = pdfParsed.search(experienceWord.regexp);
+  const personalInformation = pdfParsed.slice(
+    experienceIndex - 100,
+    experienceIndex
+  );
+  console.log({ personalInformation });
 
   return { mobile, email, skills };
 }
