@@ -11,11 +11,11 @@ export async function getItems({
 }) {
   const contact = new ContactWord({ language });
   const skill = new SkillWord({ language });
-  const languagesSkill = new LanguagesWord({ language });
+  const languagesWord = new LanguagesWord({ language });
   const linkedinResume = new LinkedInResume({
     contact,
     skill,
-    languagesSkill,
+    languagesWord,
     pdfParsed,
     language,
   });

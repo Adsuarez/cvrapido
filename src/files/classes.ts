@@ -25,13 +25,13 @@ class LinkedInResume {
   constructor({
     contact,
     skill,
-    languagesSkill,
+    languagesWord,
     pdfParsed,
     language,
   }: {
     contact: ContactWord;
     skill: SkillWord;
-    languagesSkill: LanguagesWord;
+    languagesWord: LanguagesWord;
     pdfParsed: string;
     language: Languages;
   }) {
@@ -39,7 +39,7 @@ class LinkedInResume {
       pdfParsed,
       contact,
       skill,
-      languagesSkill,
+      languagesWord,
       language,
     });
 

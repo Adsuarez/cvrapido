@@ -10,12 +10,12 @@ export function extractor({
   pdfParsed,
   contact,
   skill,
-  languagesSkill,
+  languagesWord,
   language,
 }: {
   contact: ContactWord;
   skill: SkillWord;
-  languagesSkill: LanguagesWord;
+  languagesWord: LanguagesWord;
   pdfParsed: string;
   language: Languages;
 }) {
@@ -38,7 +38,7 @@ export function extractor({
     .slice(emailIndex, linkedinUrlIndex)
     .replaceAll("\n", "");
 
-  const languagesSkillIndex = pdfParsed.search(languagesSkill.regexp);
+  const languagesSkillIndex = pdfParsed.search(languagesWord.regexp);
   const skills = pdfParsed
     .slice(skillIndex + skill.length, languagesSkillIndex)
     .trim()
