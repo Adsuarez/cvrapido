@@ -3,6 +3,7 @@ import { extractor } from "@/files/utils/extractor.ts";
 
 import type {
   ContactWord,
+  ExperienceWord,
   LanguagesWord,
   SkillWord,
 } from "@/files/words/classes.ts";
@@ -26,12 +27,14 @@ class LinkedInResume {
     contactWord,
     skillWord,
     languagesWord,
+    experienceWord,
     pdfParsed,
     language,
   }: {
     contactWord: ContactWord;
     skillWord: SkillWord;
     languagesWord: LanguagesWord;
+    experienceWord: ExperienceWord;
     pdfParsed: string;
     language: Languages;
   }) {
@@ -40,6 +43,7 @@ class LinkedInResume {
       contactWord,
       skillWord,
       languagesWord,
+      experienceWord,
       language,
     });
 
