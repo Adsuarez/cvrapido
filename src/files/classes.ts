@@ -1,6 +1,6 @@
 import { Languages } from "@/files/consts.ts";
 import { extractor } from "@/files/utils/extractor.ts";
-import { CONTACT_WORD } from "@/files/words/consts.ts";
+
 import type {
   ContactWord,
   LanguagesWord,
@@ -17,27 +17,6 @@ type TopSkills = {
   skill2?: string;
   skill3?: string;
 } | null;
-
-class LanguageOfPdf {
-  is: Languages | null = Languages.Spanish;
-  constructor({ pdfParsed }: { pdfParsed: string }) {
-    console.log("heeeeeeeeeeeeeeeeeeereeeeeeeeeeeeeeeeeeee: \n");
-    let word = CONTACT_WORD[Languages.Spanish];
-    let wordWithRegExp = new RegExp(word, "mui");
-    let indexOfWord = pdfParsed.search(wordWithRegExp);
-    console.log(indexOfWord);
-    if (indexOfWord < 0) {
-      word = CONTACT_WORD[Languages.English];
-      let wordWithRegExp = new RegExp(word, "mui");
-      let indexOfWord = pdfParsed.search(wordWithRegExp);
-      if (indexOfWord < 0) {
-        this.is = null;
-      } else {
-        this.is = Languages.English;
-      }
-    }
-  }
-}
 
 class LinkedInResume {
   protected contact: ContactItems;
@@ -87,4 +66,4 @@ class LinkedInResume {
   }
 }
 
-export { LinkedInResume, LanguageOfPdf };
+export { LinkedInResume };
