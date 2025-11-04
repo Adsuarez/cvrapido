@@ -18,7 +18,7 @@ type TopSkills = {
   skill3?: string;
 } | null;
 
-class Language {
+class LanguageOfPdf {
   is: Languages | null = Languages.Spanish;
   constructor({ pdfParsed }: { pdfParsed: string }) {
     console.log("heeeeeeeeeeeeeeeeeeereeeeeeeeeeeeeeeeeeee: \n");
@@ -87,4 +87,4 @@ class LinkedInResume {
   }
 }
 
-export { LinkedInResume, Language };
+export { LinkedInResume, LanguageOfPdf };
