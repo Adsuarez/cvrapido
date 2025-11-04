@@ -1,6 +1,11 @@
 import { LinkedInResume } from "@/files/classes";
 import type { Languages } from "@/files/consts.ts";
-import { ContactWord, LanguagesWord, SkillWord } from "@/files/words/classes";
+import {
+  ContactWord,
+  ExperienceWord,
+  LanguagesWord,
+  SkillWord,
+} from "@/files/words/classes";
 
 export async function getItems({
   pdfParsed,
@@ -12,10 +17,12 @@ export async function getItems({
   const contactWord = new ContactWord({ language });
   const skillWord = new SkillWord({ language });
   const languagesWord = new LanguagesWord({ language });
+  const experienceWord = new ExperienceWord({ language });
   const linkedinResume = new LinkedInResume({
     contactWord,
     skillWord,
     languagesWord,
+    experienceWord,
     pdfParsed,
     language,
   });
