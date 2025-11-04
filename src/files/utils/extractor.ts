@@ -1,7 +1,7 @@
 import { Languages, EMAIL_REGEXP } from "@/files/consts.ts";
 import type {
   ContactWord,
-  LanguagesSkill,
+  LanguagesWord,
   SkillWord,
 } from "@/files/words/classes.ts";
 import { MOBILE_WORD } from "@/files/words/consts.ts";
@@ -15,7 +15,7 @@ export function extractor({
 }: {
   contact: ContactWord;
   skill: SkillWord;
-  languagesSkill: LanguagesSkill;
+  languagesSkill: LanguagesWord;
   pdfParsed: string;
   language: Languages;
 }) {
