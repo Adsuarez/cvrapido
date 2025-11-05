@@ -1,11 +1,17 @@
-import { Languages, EMAIL_REGEXP } from "@/files/consts.ts";
+import {
+  Languages,
+  EMAIL_REGEXP,
+  type PersonalInformation,
+} from "@/files/consts.ts";
 import type {
   ContactWord,
   ExperienceWord,
   LanguagesWord,
   SkillWord,
+  SummaryWord,
 } from "@/files/words/classes.ts";
 import { MOBILE_WORD } from "@/files/words/consts.ts";
+import { getPersonalInformation } from "./get-personal-information";
 
 export function extractor({
   pdfParsed,
@@ -13,12 +19,14 @@ export function extractor({
   skillWord,
   languagesWord,
   experienceWord,
+  summaryWord,
   language,
 }: {
   contactWord: ContactWord;
   skillWord: SkillWord;
   languagesWord: LanguagesWord;
   experienceWord: ExperienceWord;
+  summaryWord: SummaryWord;
   pdfParsed: string;
   language: Languages;
 }) {
@@ -48,11 +56,21 @@ export function extractor({
     .split("\n");
 
   const experienceIndex = pdfParsed.search(experienceWord.regexp);
-  const personalInformation = pdfParsed.slice(
-    experienceIndex - 100,
-    experienceIndex
-  );
-  console.log({ personalInformation });
+  let personalInformation: PersonalInformation;
+  const summaryIndex = pdfParsed.search(summaryWord.regexp);
+  const hasSummary = summaryIndex >= 0 ? true : false;
 
-  return { mobile, email, skills };
+  if (hasSummary) {
+    personalInformation = getPersonalInformation({
+      index: summaryIndex,
+      pdfParsed,
+    });
+  } else {
+    personalInformation = personalInformation = getPersonalInformation({
+      index: experienceIndex,
+      pdfParsed,
+    });
+  }
+
+  return { mobile, email, skills, personalInformation };
 }
