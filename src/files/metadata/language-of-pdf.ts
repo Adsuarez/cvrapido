@@ -1,5 +1,5 @@
 import { Languages } from "@/files/consts.ts";
-import { CONTACT_WORD } from "../words/consts";
+import { CONTACT_WORD } from "@/files/words/consts.ts";
 
 class LanguageOfPdf {
   is: Languages | null = Languages.Spanish;

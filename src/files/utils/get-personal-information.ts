@@ -1,4 +1,4 @@
-import type { PersonalInformation } from "../consts";
+import type { PersonalInformation } from "@/files/consts.ts";
 
 const START_INDEX_OFFSET = 150;
 export function getPersonalInformation({
