@@ -60,9 +60,12 @@ export function extractor({
   const summaryIndex = pdfParsed.search(summaryWord.regexp);
   const hasSummary = summaryIndex >= 0 ? true : false;
   let summary = "";
+  const indexToStartCreationOfPersonalInformation =
+    languagesSkillIndex >= 0 ? languagesSkillIndex : skillIndex;
+
   if (hasSummary) {
     personalInformation = getPersonalInformation({
-      startIndex: languagesSkillIndex,
+      startIndex: indexToStartCreationOfPersonalInformation,
       endIndex: summaryIndex,
       pdfParsed,
     });
@@ -73,7 +76,7 @@ export function extractor({
       .join(" ");
   } else {
     personalInformation = personalInformation = getPersonalInformation({
-      startIndex: languagesSkillIndex,
+      startIndex: indexToStartCreationOfPersonalInformation,
       endIndex: experienceIndex,
       pdfParsed,
     });
