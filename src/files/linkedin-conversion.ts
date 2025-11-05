@@ -9,7 +9,7 @@ import {
 export async function linkedinConversion({ pdfParsed }: { pdfParsed: string }) {
   console.log(pdfParsed);
   const language = await getLanguage({ pdfParsed });
-  let data: ConversionResponseData = {};
+  let data: ConversionResponseData = null;
   let error: ConversionResponseError = ERROR_MESSAGE.NOT_IS_LINKEDIN;
   if (!language) return { data, error };
   const { contactItems, topSkills, personalInformation } = await getItems({
