@@ -28,8 +28,22 @@ export function getPersonalInformation({
     fullname = dirtyArray[indexWhereProfessionStarts - 1];
     profession = professionChunks.join(" ");
   } else {
-    profession = dirtyArray.pop() ?? "";
-    fullname = dirtyArray.pop() ?? "";
+    const indexes: number[] = [];
+
+    dirtyArray.forEach((el, index) => {
+      if (el.includes(" and ") || el.includes(", ")) {
+        indexes.push(index);
+      }
+    });
+
+    if (indexes.length > 0) {
+      profession = dirtyArray.slice(indexes[0], dirtyArray.length).join(" ");
+      console.log({ dirtyArray });
+      fullname = dirtyArray[indexes[0] - 1];
+    } else {
+      profession = dirtyArray.pop() ?? "";
+      fullname = dirtyArray.pop() ?? "";
+    }
   }
 
   const personalInformation: PersonalInformation = {
