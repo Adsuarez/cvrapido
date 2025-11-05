@@ -1,5 +1,13 @@
+import type { ContactItems, TopSkills } from "./classes";
+
 export type ConversionResponseError = string | null;
-export type ConversionResponseData = {};
+
+export type ConversionResponseData = {
+  contactItems: ContactItems;
+  topSkills: TopSkills;
+  personalInformation: PersonalInformation;
+} | null;
+
 export type ConversionResponse = {
   data: ConversionResponseData;
   error: ConversionResponseError;
