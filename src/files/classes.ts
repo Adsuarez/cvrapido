@@ -9,12 +9,12 @@ import type {
   SummaryWord,
 } from "@/files/words/classes.ts";
 
-type ContactItems = {
+export type ContactItems = {
   mobile?: string;
   email?: string;
 };
 
-type TopSkills = {
+export type TopSkills = {
   skill1?: string;
   skill2?: string;
   skill3?: string;
