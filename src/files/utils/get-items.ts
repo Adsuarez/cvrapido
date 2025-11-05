@@ -5,6 +5,7 @@ import {
   ExperienceWord,
   LanguagesWord,
   SkillWord,
+  SummaryWord,
 } from "@/files/words/classes";
 
 export async function getItems({
@@ -17,16 +18,19 @@ export async function getItems({
   const contactWord = new ContactWord({ language });
   const skillWord = new SkillWord({ language });
   const languagesWord = new LanguagesWord({ language });
+  const summaryWord = new SummaryWord({ language });
   const experienceWord = new ExperienceWord({ language });
   const linkedinResume = new LinkedInResume({
     contactWord,
     skillWord,
     languagesWord,
     experienceWord,
+    summaryWord,
     pdfParsed,
     language,
   });
   const contactItems = linkedinResume.getContact;
   const topSkills = linkedinResume.getSkills;
-  return { contactItems, topSkills };
+  const personalInformation = linkedinResume.getPersonalInformation;
+  return { contactItems, topSkills, personalInformation };
 }
