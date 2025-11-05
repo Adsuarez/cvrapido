@@ -59,12 +59,17 @@ export function extractor({
   let personalInformation: PersonalInformation;
   const summaryIndex = pdfParsed.search(summaryWord.regexp);
   const hasSummary = summaryIndex >= 0 ? true : false;
-
+  let summary = "";
   if (hasSummary) {
     personalInformation = getPersonalInformation({
       index: summaryIndex,
       pdfParsed,
     });
+    summary = pdfParsed
+      .slice(summaryIndex + summaryWord.length, experienceIndex)
+      .trim()
+      .split("\n")
+      .join("");
   } else {
     personalInformation = personalInformation = getPersonalInformation({
       index: experienceIndex,
@@ -72,5 +77,5 @@ export function extractor({
     });
   }
 
-  return { mobile, email, skills, personalInformation };
+  return { mobile, email, skills, personalInformation, summary };
 }
