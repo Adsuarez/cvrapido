@@ -1,4 +1,4 @@
-import { Languages } from "@/files/consts.ts";
+import { Languages, type PersonalInformation } from "@/files/consts.ts";
 import { extractor } from "@/files/utils/extractor.ts";
 
 import type {
@@ -6,6 +6,7 @@ import type {
   ExperienceWord,
   LanguagesWord,
   SkillWord,
+  SummaryWord,
 } from "@/files/words/classes.ts";
 
 type ContactItems = {
@@ -22,12 +23,14 @@ type TopSkills = {
 class LinkedInResume {
   protected contact: ContactItems;
   protected topSkills: TopSkills;
+  protected personalInformation: PersonalInformation;
 
   constructor({
     contactWord,
     skillWord,
     languagesWord,
     experienceWord,
+    summaryWord,
     pdfParsed,
     language,
   }: {
@@ -35,15 +38,17 @@ class LinkedInResume {
     skillWord: SkillWord;
     languagesWord: LanguagesWord;
     experienceWord: ExperienceWord;
+    summaryWord: SummaryWord;
     pdfParsed: string;
     language: Languages;
   }) {
-    const { mobile, email, skills } = extractor({
+    const { mobile, email, skills, personalInformation } = extractor({
       pdfParsed,
       contactWord,
       skillWord,
       languagesWord,
       experienceWord,
+      summaryWord,
       language,
     });
 
@@ -59,6 +64,8 @@ class LinkedInResume {
       skill2,
       skill3,
     };
+
+    this.personalInformation = personalInformation;
   }
 
   get getContact() {
@@ -67,6 +74,10 @@ class LinkedInResume {
 
   get getSkills() {
     return this.topSkills;
+  }
+
+  get getPersonalInformation() {
+    return this.personalInformation;
   }
 }
 
