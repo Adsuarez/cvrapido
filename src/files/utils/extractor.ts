@@ -69,7 +69,7 @@ export function extractor({
       .slice(summaryIndex + summaryWord.length, experienceIndex)
       .trim()
       .split("\n")
-      .join("");
+      .join(" ");
   } else {
     personalInformation = personalInformation = getPersonalInformation({
       index: experienceIndex,
