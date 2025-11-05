@@ -4,6 +4,7 @@ import {
   ERROR_MESSAGE,
   type ConversionResponseData,
   type ConversionResponseError,
+  type ConversionResponse,
 } from "@/files/consts.ts";
 
 export async function linkedinConversion({ pdfParsed }: { pdfParsed: string }) {
@@ -11,12 +12,14 @@ export async function linkedinConversion({ pdfParsed }: { pdfParsed: string }) {
   const language = await getLanguage({ pdfParsed });
   let data: ConversionResponseData = null;
   let error: ConversionResponseError = ERROR_MESSAGE.NOT_IS_LINKEDIN;
-  if (!language) return { data, error };
+  let response: ConversionResponse = { data, error };
+  if (!language) return response;
   const { contactItems, topSkills, personalInformation } = await getItems({
     pdfParsed,
     language,
   });
   error = null;
   data = { contactItems, topSkills, personalInformation };
-  return { data, error };
+  response = { data, error };
+  return response;
 }
