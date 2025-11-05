@@ -62,7 +62,8 @@ export function extractor({
   let summary = "";
   if (hasSummary) {
     personalInformation = getPersonalInformation({
-      index: summaryIndex,
+      startIndex: languagesSkillIndex,
+      endIndex: summaryIndex,
       pdfParsed,
     });
     summary = pdfParsed
@@ -72,7 +73,8 @@ export function extractor({
       .join(" ");
   } else {
     personalInformation = personalInformation = getPersonalInformation({
-      index: experienceIndex,
+      startIndex: languagesSkillIndex,
+      endIndex: experienceIndex,
       pdfParsed,
     });
   }
