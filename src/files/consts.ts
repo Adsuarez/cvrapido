@@ -6,6 +6,7 @@ export type ConversionResponseData = {
   contactItems: ContactItems;
   topSkills: TopSkills;
   personalInformation: PersonalInformation;
+  summary: string;
 } | null;
 
 export type ConversionResponse = {
