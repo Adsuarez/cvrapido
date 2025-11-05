@@ -5,6 +5,12 @@ export type ConversionResponse = {
   error: ConversionResponseError;
 };
 
+export type PersonalInformation = {
+  fullname: string;
+  profession: string;
+  location: string;
+};
+
 const ERROR_MESSAGE = {
   NOT_IS_LINKEDIN:
     "The document provided is not compatible with a LinkedIn resume PDF",
