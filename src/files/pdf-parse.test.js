@@ -1,6 +1,6 @@
 import { expect, test, describe } from 'vitest'
 import {parsePdf} from "@/files/pdf-parse.ts"
-import { ERROR_MESSAGE } from './consts';
+import { ERROR_MESSAGE } from '@/files/consts.ts';
 
 describe("Reading linkedin resume", ()=>{
   test("with Mobile number and email should return mobile and email strings with length greater than cero", async ()=>{

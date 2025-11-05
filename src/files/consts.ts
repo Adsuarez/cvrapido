@@ -1,4 +1,4 @@
-import type { ContactItems, TopSkills } from "./classes";
+import type { ContactItems, TopSkills } from "@/files/classes.ts";
 
 export type ConversionResponseError = string | null;
 

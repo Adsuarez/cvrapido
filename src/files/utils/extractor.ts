@@ -11,7 +11,7 @@ import type {
   SummaryWord,
 } from "@/files/words/classes.ts";
 import { MOBILE_WORD } from "@/files/words/consts.ts";
-import { getPersonalInformation } from "./get-personal-information";
+import { getPersonalInformation } from "@/files/utils/get-personal-information.ts";
 
 export function extractor({
   pdfParsed,
