@@ -24,6 +24,7 @@ class LinkedInResume {
   protected contact: ContactItems;
   protected topSkills: TopSkills;
   protected personalInformation: PersonalInformation;
+  protected summary: string;
 
   constructor({
     contactWord,
@@ -42,7 +43,7 @@ class LinkedInResume {
     pdfParsed: string;
     language: Languages;
   }) {
-    const { mobile, email, skills, personalInformation } = extractor({
+    const { mobile, email, skills, personalInformation, summary } = extractor({
       pdfParsed,
       contactWord,
       skillWord,
@@ -66,6 +67,8 @@ class LinkedInResume {
     };
 
     this.personalInformation = personalInformation;
+
+    this.summary = summary;
   }
 
   get getContact() {
@@ -78,6 +81,10 @@ class LinkedInResume {
 
   get getPersonalInformation() {
     return this.personalInformation;
+  }
+
+  get getSummary() {
+    return this.summary;
   }
 }
 
