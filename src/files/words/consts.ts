@@ -14,28 +14,28 @@ const MOBILE_WORD = {
 };
 
 const CONTACT_WORD = {
-  [Languages.English]: "contact",
-  [Languages.Spanish]: "contactar",
+  [Languages.English]: "contact\n",
+  [Languages.Spanish]: "contactar\n",
 };
 
 const SKILL_WORD = {
-  [Languages.English]: "top skills",
-  [Languages.Spanish]: "aptitudes principales",
+  [Languages.English]: "top skills\n",
+  [Languages.Spanish]: "aptitudes principales\n",
 };
 
 const LANGUAGE_WORD = {
-  [Languages.English]: "languages",
-  [Languages.Spanish]: "languages",
+  [Languages.English]: "languages\n",
+  [Languages.Spanish]: "languages\n",
 };
 
 const SUMMARY_WORD = {
-  [Languages.English]: "summary",
-  [Languages.Spanish]: "extracto",
+  [Languages.English]: "summary\n",
+  [Languages.Spanish]: "extracto\n",
 };
 
 const EXPERIENCE_WORD = {
-  [Languages.English]: "experience",
-  [Languages.Spanish]: "experiencia",
+  [Languages.English]: "experience\n",
+  [Languages.Spanish]: "experiencia\n",
 };
 
 const WORD_SELECTOR = {
