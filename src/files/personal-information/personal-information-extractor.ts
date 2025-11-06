@@ -1,4 +1,4 @@
-import { getPersonalInformation } from "@/files/utils/get-personal-information.ts";
+import { getPersonalInformation } from "@/files/personal-information/get-personal-information.ts";
 import type { PersonalInformation } from "@/files/consts.ts";
 
 export function personalInformationExtractor({
