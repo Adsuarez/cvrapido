@@ -1,5 +1,17 @@
-import { LinkedInResume } from "@/files/classes";
-import type { Languages } from "@/files/consts.ts";
+import {
+  LinkedInResume,
+  type ContactItems,
+  type TopSkills,
+} from "@/files/classes";
+import {
+  ERROR_MESSAGE,
+  type ConversionResponse,
+  type ConversionResponseData,
+  type ConversionResponseError,
+  type Languages,
+  type PersonalInformation,
+  type Summary,
+} from "@/files/consts.ts";
 import {
   CertificationsWord,
   ContactWord,
@@ -15,26 +27,41 @@ export async function getItems({
 }: {
   pdfParsed: string;
   language: Languages;
-}) {
-  const contactWord = new ContactWord({ language });
-  const skillWord = new SkillWord({ language });
-  const languagesWord = new LanguagesWord({ language });
-  const certificationsWord = new CertificationsWord({ language });
-  const summaryWord = new SummaryWord({ language });
-  const experienceWord = new ExperienceWord({ language });
-  const linkedinResume = new LinkedInResume({
-    contactWord,
-    skillWord,
-    languagesWord,
-    certificationsWord,
-    experienceWord,
-    summaryWord,
-    pdfParsed,
-    language,
-  });
-  const contactItems = linkedinResume.getContact;
-  const topSkills = linkedinResume.getSkills;
-  const personalInformation = linkedinResume.getPersonalInformation;
-  const summary = linkedinResume.getSummary;
-  return { contactItems, topSkills, personalInformation, summary };
+}): Promise<ConversionResponse> {
+  try {
+    const contactWord = new ContactWord({ language });
+    const skillWord = new SkillWord({ language });
+    const languagesWord = new LanguagesWord({ language });
+    const certificationsWord = new CertificationsWord({ language });
+    const summaryWord = new SummaryWord({ language });
+    const experienceWord = new ExperienceWord({ language });
+    const linkedinResume = new LinkedInResume({
+      contactWord,
+      skillWord,
+      languagesWord,
+      certificationsWord,
+      experienceWord,
+      summaryWord,
+      pdfParsed,
+      language,
+    });
+    const contactItems = linkedinResume.getContact;
+    const topSkills = linkedinResume.getSkills;
+    const personalInformation = linkedinResume.getPersonalInformation;
+    const summary = linkedinResume.getSummary;
+    const data: ConversionResponseData = {
+      contactItems,
+      topSkills,
+      personalInformation,
+      summary,
+    };
+    const error: ConversionResponseError = null;
+    const response: ConversionResponse = { data, error };
+    return response;
+  } catch {
+    const data: ConversionResponseData = null;
+    const error: ConversionResponseError = ERROR_MESSAGE.MISSING_INFORMATION;
+    const response: ConversionResponse = { data, error };
+    return response;
+  }
 }
