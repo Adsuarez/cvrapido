@@ -11,6 +11,7 @@ export const server = {
     handler: async (input) => {
       const { url } = input;
       const { data, error }: ConversionResponse = await parsePdf({ url });
+      console.error(error);
       if (!error) return data;
     },
   }),
