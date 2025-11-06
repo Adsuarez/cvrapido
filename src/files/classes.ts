@@ -2,6 +2,7 @@ import { Languages, type PersonalInformation } from "@/files/consts.ts";
 import { extractor } from "@/files/utils/extractor.ts";
 
 import type {
+  CertificationsWord,
   ContactWord,
   ExperienceWord,
   LanguagesWord,
@@ -30,6 +31,7 @@ class LinkedInResume {
     contactWord,
     skillWord,
     languagesWord,
+    certificationsWord,
     experienceWord,
     summaryWord,
     pdfParsed,
@@ -38,6 +40,7 @@ class LinkedInResume {
     contactWord: ContactWord;
     skillWord: SkillWord;
     languagesWord: LanguagesWord;
+    certificationsWord: CertificationsWord;
     experienceWord: ExperienceWord;
     summaryWord: SummaryWord;
     pdfParsed: string;
@@ -48,6 +51,7 @@ class LinkedInResume {
       contactWord,
       skillWord,
       languagesWord,
+      certificationsWord,
       experienceWord,
       summaryWord,
       language,
