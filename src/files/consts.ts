@@ -1,18 +1,22 @@
 import type { ContactItems, TopSkills } from "@/files/classes.ts";
 
-export type ConversionResponseError = string | null;
-
-export type ConversionResponseData = {
+export type Resume = {
   contactItems: ContactItems;
   topSkills: TopSkills;
   personalInformation: PersonalInformation;
-  summary: string;
-} | null;
+  summary: Summary;
+};
+
+export type ConversionResponseError = string | null;
+
+export type ConversionResponseData = Resume | null;
 
 export type ConversionResponse = {
   data: ConversionResponseData;
   error: ConversionResponseError;
 };
+
+export type Summary = string;
 
 export type PersonalInformation = {
   fullname: string;
@@ -23,6 +27,8 @@ export type PersonalInformation = {
 const ERROR_MESSAGE = {
   NOT_IS_LINKEDIN:
     "The document provided is not compatible with a LinkedIn resume PDF",
+  MISSING_INFORMATION:
+    "Some required information is missing in the document, please be sure to fill your Name, Profession, Location, Languages, summary and experience",
 };
 
 enum Languages {
