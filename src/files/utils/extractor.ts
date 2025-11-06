@@ -7,10 +7,10 @@ import type {
   SkillWord,
   SummaryWord,
 } from "@/files/words/classes.ts";
-import { getPersonalInformation } from "@/files/utils/get-personal-information.ts";
 import { contactExtractor } from "@/files/contact/contact-extractor.ts";
 import type { ContactItems } from "@/files/classes.ts";
 import { skillsExtractor } from "@/files/skills/skills-extractor.ts";
+import { personalInformationExtractor } from "../personal-information/personal-information-extractor";
 
 export function extractor({
   pdfParsed,
@@ -54,30 +54,29 @@ export function extractor({
   const certificationsIndex = pdfParsed.search(certificationsWord.regexp);
 
   const experienceIndex = pdfParsed.search(experienceWord.regexp);
-  let personalInformation: PersonalInformation;
+
   const summaryIndex = pdfParsed.search(summaryWord.regexp);
-  const hasSummary = summaryIndex >= 0 ? true : false;
+
+  const personalInformation: PersonalInformation = personalInformationExtractor(
+    {
+      pdfParsed,
+      experienceIndex,
+      languagesSkillIndex,
+      skillIndex,
+      summaryIndex,
+    }
+  );
+
   let summary = "";
-  const indexToStartCreationOfPersonalInformation =
-    languagesSkillIndex >= 0 ? languagesSkillIndex : skillIndex;
+
+  const hasSummary = summaryIndex >= 0 ? true : false;
 
   if (hasSummary) {
-    personalInformation = getPersonalInformation({
-      startIndex: indexToStartCreationOfPersonalInformation,
-      endIndex: summaryIndex,
-      pdfParsed,
-    });
     summary = pdfParsed
       .slice(summaryIndex + summaryWord.length, experienceIndex)
       .trim()
       .split("\n")
       .join(" ");
-  } else {
-    personalInformation = personalInformation = getPersonalInformation({
-      startIndex: indexToStartCreationOfPersonalInformation,
-      endIndex: experienceIndex,
-      pdfParsed,
-    });
   }
 
   return { mobile, email, skills, personalInformation, summary };
