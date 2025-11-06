@@ -8,9 +8,9 @@ import type {
   SummaryWord,
 } from "@/files/words/classes.ts";
 import { getPersonalInformation } from "@/files/utils/get-personal-information.ts";
-import { contactExtractor } from "../contact/contact-extractor";
-import type { ContactItems } from "../classes";
-import { skillsExtractor } from "../skills/skills-extractor";
+import { contactExtractor } from "@/files/contact/contact-extractor.ts";
+import type { ContactItems } from "@/files/classes.ts";
+import { skillsExtractor } from "@/files/skills/skills-extractor.ts";
 
 export function extractor({
   pdfParsed,
