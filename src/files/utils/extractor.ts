@@ -4,6 +4,7 @@ import {
   type PersonalInformation,
 } from "@/files/consts.ts";
 import type {
+  CertificationsWord,
   ContactWord,
   ExperienceWord,
   LanguagesWord,
@@ -18,6 +19,7 @@ export function extractor({
   contactWord,
   skillWord,
   languagesWord,
+  certificationsWord,
   experienceWord,
   summaryWord,
   language,
@@ -25,6 +27,7 @@ export function extractor({
   contactWord: ContactWord;
   skillWord: SkillWord;
   languagesWord: LanguagesWord;
+  certificationsWord: CertificationsWord;
   experienceWord: ExperienceWord;
   summaryWord: SummaryWord;
   pdfParsed: string;
@@ -54,6 +57,8 @@ export function extractor({
     .slice(skillIndex + skillWord.length, languagesSkillIndex)
     .trim()
     .split("\n");
+
+  const certificationsIndex = pdfParsed.search(certificationsWord.regexp);
 
   const experienceIndex = pdfParsed.search(experienceWord.regexp);
   let personalInformation: PersonalInformation;
