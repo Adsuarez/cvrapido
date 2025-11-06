@@ -10,6 +10,7 @@ import type {
 import { getPersonalInformation } from "@/files/utils/get-personal-information.ts";
 import { contactExtractor } from "../contact/contact-extractor";
 import type { ContactItems } from "../classes";
+import { skillsExtractor } from "../skills/skills-extractor";
 
 export function extractor({
   pdfParsed,
@@ -31,6 +32,7 @@ export function extractor({
   language: Languages;
 }) {
   const skillIndex = pdfParsed.search(skillWord.regexp);
+
   const contactItems: ContactItems = contactExtractor({
     pdfParsed,
     language,
@@ -41,10 +43,13 @@ export function extractor({
   const { email, mobile } = contactItems;
 
   const languagesSkillIndex = pdfParsed.search(languagesWord.regexp);
-  const skills = pdfParsed
-    .slice(skillIndex + skillWord.length, languagesSkillIndex)
-    .trim()
-    .split("\n");
+
+  const skills = skillsExtractor({
+    pdfParsed,
+    skillIndex,
+    skillWord,
+    languagesSkillIndex,
+  });
 
   const certificationsIndex = pdfParsed.search(certificationsWord.regexp);
 
