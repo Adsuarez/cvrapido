@@ -4,6 +4,7 @@ enum Words {
   Contact,
   Skill,
   Languages,
+  Certifications,
   Summary,
   Experience,
 }
@@ -28,6 +29,11 @@ const LANGUAGE_WORD = {
   [Languages.Spanish]: "languages\n",
 };
 
+const CERTIFICATIONS_WORD = {
+  [Languages.English]: "certifications\n",
+  [Languages.Spanish]: "certificaciones\n",
+};
+
 const SUMMARY_WORD = {
   [Languages.English]: "summary\n",
   [Languages.Spanish]: "extracto\n",
@@ -42,6 +48,7 @@ const WORD_SELECTOR = {
   [Words.Contact]: CONTACT_WORD,
   [Words.Skill]: SKILL_WORD,
   [Words.Languages]: LANGUAGE_WORD,
+  [Words.Certifications]: CERTIFICATIONS_WORD,
   [Words.Summary]: SUMMARY_WORD,
   [Words.Experience]: EXPERIENCE_WORD,
 };
