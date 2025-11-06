@@ -1,8 +1,4 @@
-import {
-  Languages,
-  EMAIL_REGEXP,
-  type PersonalInformation,
-} from "@/files/consts.ts";
+import { Languages, type PersonalInformation } from "@/files/consts.ts";
 import type {
   CertificationsWord,
   ContactWord,
@@ -11,8 +7,9 @@ import type {
   SkillWord,
   SummaryWord,
 } from "@/files/words/classes.ts";
-import { MOBILE_WORD } from "@/files/words/consts.ts";
 import { getPersonalInformation } from "@/files/utils/get-personal-information.ts";
+import { contactExtractor } from "../contact/contact-extractor";
+import type { ContactItems } from "../classes";
 
 export function extractor({
   pdfParsed,
@@ -33,24 +30,15 @@ export function extractor({
   pdfParsed: string;
   language: Languages;
 }) {
-  const contactIndex = pdfParsed.search(contactWord.regexp);
   const skillIndex = pdfParsed.search(skillWord.regexp);
-  const allContact = pdfParsed.slice(contactIndex, skillIndex);
+  const contactItems: ContactItems = contactExtractor({
+    pdfParsed,
+    language,
+    contactWord,
+    skillIndex,
+  });
 
-  const mobileIndex = pdfParsed.search(MOBILE_WORD[language]);
-  const mobile =
-    mobileIndex >= 0
-      ? allContact
-          .slice(contactIndex + contactWord.length, mobileIndex)
-          .replace("(", "")
-          .trim()
-      : "";
-
-  const emailIndex = allContact.search(EMAIL_REGEXP);
-  const linkedinUrlIndex = allContact.search("www.linkedin");
-  const email = allContact
-    .slice(emailIndex, linkedinUrlIndex)
-    .replaceAll("\n", "");
+  const { email, mobile } = contactItems;
 
   const languagesSkillIndex = pdfParsed.search(languagesWord.regexp);
   const skills = pdfParsed
