@@ -10,7 +10,8 @@ import type {
 import { contactExtractor } from "@/files/contact/contact-extractor.ts";
 import type { ContactItems } from "@/files/classes.ts";
 import { skillsExtractor } from "@/files/skills/skills-extractor.ts";
-import { personalInformationExtractor } from "../personal-information/personal-information-extractor";
+import { personalInformationExtractor } from "@/files/personal-information/personal-information-extractor";
+import { summaryExtractor } from "@/files/summary/summary-extractor";
 
 export function extractor({
   pdfParsed,
@@ -67,17 +68,12 @@ export function extractor({
     }
   );
 
-  let summary = "";
-
-  const hasSummary = summaryIndex >= 0 ? true : false;
-
-  if (hasSummary) {
-    summary = pdfParsed
-      .slice(summaryIndex + summaryWord.length, experienceIndex)
-      .trim()
-      .split("\n")
-      .join(" ");
-  }
+  const summary = summaryExtractor({
+    pdfParsed,
+    experienceIndex,
+    summaryIndex,
+    summaryWord,
+  });
 
   return { mobile, email, skills, personalInformation, summary };
 }
