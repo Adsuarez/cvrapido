@@ -30,6 +30,12 @@ class LanguagesWord extends Word {
   }
 }
 
+class CertificationsWord extends Word {
+  constructor({ language }: { language: Languages }) {
+    super({ language, word: Words.Certifications });
+  }
+}
+
 class SummaryWord extends Word {
   constructor({ language }: { language: Languages }) {
     super({ language, word: Words.Summary });
@@ -42,4 +48,11 @@ class ExperienceWord extends Word {
   }
 }
 
-export { ContactWord, SkillWord, LanguagesWord, ExperienceWord, SummaryWord };
+export {
+  ContactWord,
+  SkillWord,
+  LanguagesWord,
+  ExperienceWord,
+  SummaryWord,
+  CertificationsWord,
+};
