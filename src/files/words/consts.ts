@@ -12,11 +12,6 @@ enum Words {
   Experience,
 }
 
-const MOBILE_WORD = {
-  [Languages.English]: "(Mobile)",
-  [Languages.Spanish]: "(Mobile)",
-};
-
 const LANGUAGE_WORD = {
   [Languages.English]: "languages\n",
   [Languages.Spanish]: "languages\n",
@@ -41,4 +36,4 @@ const WORD_SELECTOR = {
   [Words.Experience]: EXPERIENCE_WORD,
 };
 
-export { Words, WORD_SELECTOR, MOBILE_WORD };
+export { Words, WORD_SELECTOR };
