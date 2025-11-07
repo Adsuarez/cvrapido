@@ -14,12 +14,12 @@ import {
 } from "@/files/consts.ts";
 import {
   CertificationsWord,
-  ContactWord,
   ExperienceWord,
   LanguagesWord,
   SkillWord,
   SummaryWord,
 } from "@/files/words/classes";
+import { ContactWord } from "@/files/contact/contact-word.ts";
 
 export async function getItems({
   pdfParsed,

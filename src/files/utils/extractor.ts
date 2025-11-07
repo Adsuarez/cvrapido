@@ -1,7 +1,6 @@
 import { Languages, type PersonalInformation } from "@/files/consts.ts";
 import type {
   CertificationsWord,
-  ContactWord,
   ExperienceWord,
   LanguagesWord,
   SkillWord,
@@ -12,6 +11,7 @@ import type { ContactItems } from "@/files/classes.ts";
 import { skillsExtractor } from "@/files/skills/skills-extractor.ts";
 import { personalInformationExtractor } from "@/files/personal-information/personal-information-extractor";
 import { summaryExtractor } from "@/files/summary/summary-extractor";
+import type { ContactWord } from "@/files/contact/contact-word.ts";
 
 export function extractor({
   pdfParsed,

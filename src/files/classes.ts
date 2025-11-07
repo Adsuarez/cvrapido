@@ -3,12 +3,12 @@ import { extractor } from "@/files/utils/extractor.ts";
 
 import type {
   CertificationsWord,
-  ContactWord,
   ExperienceWord,
   LanguagesWord,
   SkillWord,
   SummaryWord,
 } from "@/files/words/classes.ts";
+import type { ContactWord } from "@/files/contact/contact-word.ts";
 
 export type ContactItems = {
   mobile?: string;

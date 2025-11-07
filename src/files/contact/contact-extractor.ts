@@ -1,4 +1,4 @@
-import type { ContactWord } from "@/files/words/classes.ts";
+import type { ContactWord } from "@/files/contact/contact-word.ts";
 import { MOBILE_WORD } from "@/files/words/consts.ts";
 import { EMAIL_REGEXP, type Languages } from "@/files/consts.ts";
 import type { ContactItems } from "@/files/classes.ts";
