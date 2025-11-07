@@ -1,5 +1,6 @@
 import type { ContactItems } from "@/files/contact/contact.ts";
 import type { TopSkills } from "@/files/skills/top-skills.ts";
+import type { Summary } from "@/files/summary/summary.ts";
 
 export type Resume = {
   contactItems: ContactItems;
@@ -16,8 +17,6 @@ export type ConversionResponse = {
   data: ConversionResponseData;
   error: ConversionResponseError;
 };
-
-export type Summary = string;
 
 export type PersonalInformation = {
   fullname: string;
