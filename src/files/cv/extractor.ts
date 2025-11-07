@@ -1,6 +1,5 @@
 import type {
   CertificationsWord,
-  ExperienceWord,
   LanguagesWord,
 } from "@/files/words/classes.ts";
 import { contactExtractor } from "@/files/contact/contact-extractor.ts";
@@ -13,6 +12,7 @@ import type { SkillWord } from "@/files/skills/skills-word.ts";
 import type { SummaryWord } from "@/files/summary/summary-word.ts";
 import type { ContactItems } from "@/files/contact/contact.ts";
 import type { PersonalInformation } from "@/files/personal-information/personal-information.ts";
+import type { ExperienceWord } from "@/files/experience/experience-word.ts";
 
 export function extractor({
   pdfParsed,

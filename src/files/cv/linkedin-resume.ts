@@ -1,7 +1,6 @@
 import { extractor } from "@/files/cv/extractor.ts";
 import type {
   CertificationsWord,
-  ExperienceWord,
   LanguagesWord,
 } from "@/files/words/classes.ts";
 import type { ContactWord } from "@/files/contact/contact-word.ts";
@@ -11,6 +10,7 @@ import type { SummaryWord } from "@/files/summary/summary-word.ts";
 import type { ContactItems } from "@/files/contact/contact.ts";
 import type { TopSkills } from "@/files/skills/top-skills.ts";
 import type { PersonalInformation } from "@/files/personal-information/personal-information.ts";
+import type { ExperienceWord } from "@/files/experience/experience-word.ts";
 
 class LinkedInResume {
   protected contact: ContactItems;
