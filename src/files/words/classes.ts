@@ -24,16 +24,10 @@ class CertificationsWord extends Word {
   }
 }
 
-class SummaryWord extends Word {
-  constructor({ language }: { language: Languages }) {
-    super({ language, word: Words.Summary });
-  }
-}
-
 class ExperienceWord extends Word {
   constructor({ language }: { language: Languages }) {
     super({ language, word: Words.Experience });
   }
 }
 
-export { Word, LanguagesWord, ExperienceWord, SummaryWord, CertificationsWord };
+export { Word, LanguagesWord, ExperienceWord, CertificationsWord };

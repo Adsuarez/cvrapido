@@ -1,6 +1,7 @@
 import { CONTACT_WORD } from "@/files/contact/contact-word.ts";
 import { Languages } from "@/files/metadata/language-of-pdf.ts";
 import { SKILL_WORD } from "@/files/skills/skills-word.ts";
+import { SUMMARY_WORD } from "@/files/summary/summary-word.ts";
 
 enum Words {
   Contact,
@@ -24,11 +25,6 @@ const LANGUAGE_WORD = {
 const CERTIFICATIONS_WORD = {
   [Languages.English]: "certifications\n",
   [Languages.Spanish]: "certificaciones\n",
-};
-
-const SUMMARY_WORD = {
-  [Languages.English]: "summary\n",
-  [Languages.Spanish]: "extracto\n",
 };
 
 const EXPERIENCE_WORD = {
