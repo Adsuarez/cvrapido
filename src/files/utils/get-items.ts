@@ -3,7 +3,7 @@ import {
   type ConversionResponse,
   type ConversionResponseData,
   type ConversionResponseError,
-} from "@/files/consts.ts";
+} from "@/files/data-processing/conversion.ts";
 import {
   CertificationsWord,
   ExperienceWord,

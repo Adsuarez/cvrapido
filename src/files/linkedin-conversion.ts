@@ -4,7 +4,7 @@ import {
   type ConversionResponseData,
   type ConversionResponseError,
   type ConversionResponse,
-} from "@/files/consts.ts";
+} from "@/files/data-processing/conversion.ts";
 import { ERROR_MESSAGE } from "@/files/data-processing/errors.ts";
 
 export async function linkedinConversion({ pdfParsed }: { pdfParsed: string }) {

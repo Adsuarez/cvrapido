@@ -1,7 +1,7 @@
 import { defineAction } from "astro:actions";
 import { z } from "astro:schema";
 import { parsePdf } from "@/files/pdf-parse";
-import type { ConversionResponse } from "@/files/consts";
+import type { ConversionResponse } from "@/files/data-processing/conversion.ts";
 
 export const server = {
   parsePdf: defineAction({

@@ -1,6 +1,6 @@
 import { PDFParse } from "pdf-parse";
 import { linkedinConversion } from "@/files/linkedin-conversion.ts";
-import type { ConversionResponse } from "@/files/consts.ts";
+import type { ConversionResponse } from "@/files/data-processing/conversion.ts";
 
 export async function parsePdf({ url }: { url: string }) {
   const parser = new PDFParse({ url });
