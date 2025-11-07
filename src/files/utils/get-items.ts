@@ -1,15 +1,9 @@
-import {
-  LinkedInResume,
-  type ContactItems,
-  type TopSkills,
-} from "@/files/classes";
+import { LinkedInResume } from "@/files/classes.ts";
 import {
   ERROR_MESSAGE,
   type ConversionResponse,
   type ConversionResponseData,
   type ConversionResponseError,
-  type PersonalInformation,
-  type Summary,
 } from "@/files/consts.ts";
 import {
   CertificationsWord,
