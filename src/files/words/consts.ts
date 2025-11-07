@@ -1,4 +1,5 @@
 import { Languages } from "@/files/consts.ts";
+import { CONTACT_WORD } from "@/files/contact/contact-word.ts";
 
 enum Words {
   Contact,
@@ -12,11 +13,6 @@ enum Words {
 const MOBILE_WORD = {
   [Languages.English]: "(Mobile)",
   [Languages.Spanish]: "(Mobile)",
-};
-
-const CONTACT_WORD = {
-  [Languages.English]: "contact\n",
-  [Languages.Spanish]: "contactar\n",
 };
 
 const SKILL_WORD = {
@@ -53,4 +49,4 @@ const WORD_SELECTOR = {
   [Words.Experience]: EXPERIENCE_WORD,
 };
 
-export { Words, WORD_SELECTOR, MOBILE_WORD, CONTACT_WORD };
+export { Words, WORD_SELECTOR, MOBILE_WORD };
