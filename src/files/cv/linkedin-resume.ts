@@ -1,4 +1,4 @@
-import { extractor } from "@/files/utils/extractor.ts";
+import { extractor } from "@/files/cv/extractor.ts";
 import type {
   CertificationsWord,
   ExperienceWord,

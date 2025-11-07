@@ -1,4 +1,4 @@
-import { getItems } from "@/files/utils/get-items.ts";
+import { getItems } from "@/files/cv/get-items.ts";
 import { getLanguage } from "@/files/metadata/get-language.ts";
 import {
   type ConversionResponseData,
