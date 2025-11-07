@@ -9,11 +9,7 @@ import type { ContactWord } from "@/files/contact/contact-word.ts";
 import type { Languages } from "@/files/metadata/language-of-pdf.ts";
 import type { SkillWord } from "@/files/skills/skills-word.ts";
 import type { SummaryWord } from "@/files/summary/summary-word.ts";
-
-export type ContactItems = {
-  mobile?: string;
-  email?: string;
-};
+import type { ContactItems } from "@/files/contact/contact.ts";
 
 export type TopSkills = {
   skill1?: string;
