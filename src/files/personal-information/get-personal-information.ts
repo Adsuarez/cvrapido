@@ -1,4 +1,4 @@
-import type { PersonalInformation } from "@/files/consts.ts";
+import type { PersonalInformation } from "@/files/personal-information/personal-information.ts";
 
 export function getPersonalInformation({
   startIndex,
