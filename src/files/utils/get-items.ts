@@ -1,6 +1,5 @@
 import { LinkedInResume } from "@/files/cv/linkedin-resume.ts";
 import {
-  ERROR_MESSAGE,
   type ConversionResponse,
   type ConversionResponseData,
   type ConversionResponseError,
@@ -14,6 +13,7 @@ import { ContactWord } from "@/files/contact/contact-word.ts";
 import type { Languages } from "@/files/metadata/language-of-pdf.ts";
 import { SkillWord } from "@/files/skills/skills-word.ts";
 import { SummaryWord } from "@/files/summary/summary-word.ts";
+import { ERROR_MESSAGE } from "@/files/data-processing/errors.ts";
 
 export async function getItems({
   pdfParsed,
