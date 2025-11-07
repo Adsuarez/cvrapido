@@ -7,16 +7,20 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "vitest"
+    "test": "vitest",
+    "lint:eslint": "eslint . --ext .js,.ts,.astro"
   },
   "dependencies": {
     "astro": "^5.15.1",
     "pdf-parse": "2.4.5"
   },
   "devDependencies": {
+    "@eslint/js": "9.39.1",
     "@typescript-eslint/parser": "8.46.3",
     "eslint": "9.39.1",
     "eslint-plugin-astro": "1.5.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.46.3",
     "vitest": "4.0.8"
   }
 }
