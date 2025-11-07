@@ -3,7 +3,6 @@ import type {
   CertificationsWord,
   ExperienceWord,
   LanguagesWord,
-  SummaryWord,
 } from "@/files/words/classes.ts";
 import { contactExtractor } from "@/files/contact/contact-extractor.ts";
 import type { ContactItems } from "@/files/classes.ts";
@@ -13,6 +12,7 @@ import { summaryExtractor } from "@/files/summary/summary-extractor.ts";
 import type { ContactWord } from "@/files/contact/contact-word.ts";
 import type { Languages } from "@/files/metadata/language-of-pdf.ts";
 import type { SkillWord } from "@/files/skills/skills-word.ts";
+import type { SummaryWord } from "@/files/summary/summary-word.ts";
 
 export function extractor({
   pdfParsed,

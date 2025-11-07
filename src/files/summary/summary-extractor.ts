@@ -1,4 +1,4 @@
-import type { SummaryWord } from "@/files/words/classes.ts";
+import type { SummaryWord } from "@/files/summary/summary-word.ts";
 
 export function summaryExtractor({
   pdfParsed,

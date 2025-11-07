@@ -9,11 +9,11 @@ import {
   CertificationsWord,
   ExperienceWord,
   LanguagesWord,
-  SummaryWord,
 } from "@/files/words/classes.ts";
 import { ContactWord } from "@/files/contact/contact-word.ts";
 import type { Languages } from "@/files/metadata/language-of-pdf.ts";
 import { SkillWord } from "@/files/skills/skills-word.ts";
+import { SummaryWord } from "@/files/summary/summary-word.ts";
 
 export async function getItems({
   pdfParsed,
