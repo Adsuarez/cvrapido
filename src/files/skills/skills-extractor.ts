@@ -1,4 +1,4 @@
-import type { SkillWord } from "@/files/words/classes.ts";
+import type { SkillWord } from "@/files/skills/skills-word.ts";
 
 export function skillsExtractor({
   pdfParsed,

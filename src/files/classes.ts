@@ -4,11 +4,11 @@ import type {
   CertificationsWord,
   ExperienceWord,
   LanguagesWord,
-  SkillWord,
   SummaryWord,
 } from "@/files/words/classes.ts";
 import type { ContactWord } from "@/files/contact/contact-word.ts";
 import type { Languages } from "@/files/metadata/language-of-pdf.ts";
+import type { SkillWord } from "@/files/skills/skills-word.ts";
 
 export type ContactItems = {
   mobile?: string;
