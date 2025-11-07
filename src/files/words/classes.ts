@@ -12,12 +12,6 @@ class Word {
   }
 }
 
-class SkillWord extends Word {
-  constructor({ language }: { language: Languages }) {
-    super({ language, word: Words.Skill });
-  }
-}
-
 class LanguagesWord extends Word {
   constructor({ language }: { language: Languages }) {
     super({ language, word: Words.Languages });
@@ -42,11 +36,4 @@ class ExperienceWord extends Word {
   }
 }
 
-export {
-  Word,
-  SkillWord,
-  LanguagesWord,
-  ExperienceWord,
-  SummaryWord,
-  CertificationsWord,
-};
+export { Word, LanguagesWord, ExperienceWord, SummaryWord, CertificationsWord };

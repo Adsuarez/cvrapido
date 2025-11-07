@@ -1,5 +1,6 @@
 import { CONTACT_WORD } from "@/files/contact/contact-word.ts";
 import { Languages } from "@/files/metadata/language-of-pdf.ts";
+import { SKILL_WORD } from "@/files/skills/skills-word.ts";
 
 enum Words {
   Contact,
@@ -13,11 +14,6 @@ enum Words {
 const MOBILE_WORD = {
   [Languages.English]: "(Mobile)",
   [Languages.Spanish]: "(Mobile)",
-};
-
-const SKILL_WORD = {
-  [Languages.English]: "top skills\n",
-  [Languages.Spanish]: "aptitudes principales\n",
 };
 
 const LANGUAGE_WORD = {
