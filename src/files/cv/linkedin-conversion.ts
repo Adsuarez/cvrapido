@@ -1,5 +1,5 @@
 import { getItems } from "@/files/utils/get-items.ts";
-import { getLanguage } from "@/files/utils/get-language.ts";
+import { getLanguage } from "@/files/metadata/get-language.ts";
 import {
   type ConversionResponseData,
   type ConversionResponseError,
