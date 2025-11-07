@@ -1,4 +1,4 @@
-import { LinkedInResume } from "@/files/cv/classes.ts";
+import { LinkedInResume } from "@/files/cv/linkedin-resume.ts";
 import {
   ERROR_MESSAGE,
   type ConversionResponse,
