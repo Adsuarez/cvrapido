@@ -31,6 +31,4 @@ const ERROR_MESSAGE = {
     "Some required information is missing in the document, please be sure to fill your Name, Profession, Location, Languages, summary and experience",
 };
 
-const EMAIL_REGEXP = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/im);
-
-export { EMAIL_REGEXP, ERROR_MESSAGE };
+export { ERROR_MESSAGE };
