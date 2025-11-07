@@ -1,5 +1,5 @@
 import { PDFParse } from "pdf-parse";
-import { linkedinConversion } from "@/files/linkedin-conversion.ts";
+import { linkedinConversion } from "@/files/cv/linkedin-conversion.ts";
 import type { ConversionResponse } from "@/files/data-processing/conversion.ts";
 
 export async function parsePdf({ url }: { url: string }) {
