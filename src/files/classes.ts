@@ -10,12 +10,7 @@ import type { Languages } from "@/files/metadata/language-of-pdf.ts";
 import type { SkillWord } from "@/files/skills/skills-word.ts";
 import type { SummaryWord } from "@/files/summary/summary-word.ts";
 import type { ContactItems } from "@/files/contact/contact.ts";
-
-export type TopSkills = {
-  skill1?: string;
-  skill2?: string;
-  skill3?: string;
-} | null;
+import type { TopSkills } from "@/files/skills/top-skills.ts";
 
 class LinkedInResume {
   protected contact: ContactItems;
