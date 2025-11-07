@@ -1,4 +1,5 @@
-import type { ContactItems, TopSkills } from "@/files/classes.ts";
+import type { TopSkills } from "@/files/classes.ts";
+import type { ContactItems } from "@/files/contact/contact.ts";
 
 export type Resume = {
   contactItems: ContactItems;
