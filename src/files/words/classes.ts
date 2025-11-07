@@ -1,5 +1,5 @@
-import type { Languages } from "@/files/consts.ts";
 import { WORD_SELECTOR, Words } from "@/files/words/consts.ts";
+import type { Languages } from "@/files/metadata/language-of-pdf.ts";
 
 class Word {
   text = "";

@@ -1,6 +1,5 @@
-import { Languages, type PersonalInformation } from "@/files/consts.ts";
+import { type PersonalInformation } from "@/files/consts.ts";
 import { extractor } from "@/files/utils/extractor.ts";
-
 import type {
   CertificationsWord,
   ExperienceWord,
@@ -9,6 +8,7 @@ import type {
   SummaryWord,
 } from "@/files/words/classes.ts";
 import type { ContactWord } from "@/files/contact/contact-word.ts";
+import type { Languages } from "@/files/metadata/language-of-pdf.ts";
 
 export type ContactItems = {
   mobile?: string;

@@ -1,5 +1,5 @@
-import { Languages } from "@/files/consts.ts";
 import { CONTACT_WORD } from "@/files/contact/contact-word.ts";
+import { Languages } from "@/files/metadata/language-of-pdf.ts";
 
 enum Words {
   Contact,

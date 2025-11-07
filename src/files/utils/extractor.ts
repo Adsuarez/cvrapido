@@ -1,4 +1,4 @@
-import { Languages, type PersonalInformation } from "@/files/consts.ts";
+import { type PersonalInformation } from "@/files/consts.ts";
 import type {
   CertificationsWord,
   ExperienceWord,
@@ -9,9 +9,10 @@ import type {
 import { contactExtractor } from "@/files/contact/contact-extractor.ts";
 import type { ContactItems } from "@/files/classes.ts";
 import { skillsExtractor } from "@/files/skills/skills-extractor.ts";
-import { personalInformationExtractor } from "@/files/personal-information/personal-information-extractor";
-import { summaryExtractor } from "@/files/summary/summary-extractor";
+import { personalInformationExtractor } from "@/files/personal-information/personal-information-extractor.ts";
+import { summaryExtractor } from "@/files/summary/summary-extractor.ts";
 import type { ContactWord } from "@/files/contact/contact-word.ts";
+import type { Languages } from "@/files/metadata/language-of-pdf.ts";
 
 export function extractor({
   pdfParsed,

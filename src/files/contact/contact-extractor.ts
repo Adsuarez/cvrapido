@@ -1,7 +1,8 @@
 import type { ContactWord } from "@/files/contact/contact-word.ts";
 import { MOBILE_WORD } from "@/files/words/consts.ts";
-import { EMAIL_REGEXP, type Languages } from "@/files/consts.ts";
+import { EMAIL_REGEXP } from "@/files/consts.ts";
 import type { ContactItems } from "@/files/classes.ts";
+import type { Languages } from "@/files/metadata/language-of-pdf.ts";
 
 export function contactExtractor({
   pdfParsed,

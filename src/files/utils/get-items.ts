@@ -8,7 +8,6 @@ import {
   type ConversionResponse,
   type ConversionResponseData,
   type ConversionResponseError,
-  type Languages,
   type PersonalInformation,
   type Summary,
 } from "@/files/consts.ts";
@@ -18,8 +17,9 @@ import {
   LanguagesWord,
   SkillWord,
   SummaryWord,
-} from "@/files/words/classes";
+} from "@/files/words/classes.ts";
 import { ContactWord } from "@/files/contact/contact-word.ts";
+import type { Languages } from "@/files/metadata/language-of-pdf.ts";
 
 export async function getItems({
   pdfParsed,
