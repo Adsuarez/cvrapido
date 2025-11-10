@@ -11,7 +11,9 @@
     const { data, error } = await actions.parsePdf({
       url: "./public/example3.pdf",
     });
-    !error && console.log(data);
+    if (!error) {
+      console.log(data);
+    }
   };
 
   call();
