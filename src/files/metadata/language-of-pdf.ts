@@ -11,11 +11,10 @@ class LanguageOfPdf {
     let word = CONTACT_WORD[Languages.Spanish];
     let wordWithRegExp = new RegExp(word, "mui");
     let indexOfWord = pdfParsed.search(wordWithRegExp);
-    console.log(indexOfWord);
     if (indexOfWord < 0) {
       word = CONTACT_WORD[Languages.English];
-      let wordWithRegExp = new RegExp(word, "mui");
-      let indexOfWord = pdfParsed.search(wordWithRegExp);
+      wordWithRegExp = new RegExp(word, "mui");
+      indexOfWord = pdfParsed.search(wordWithRegExp);
       if (indexOfWord < 0) {
         this.is = null;
       } else {
