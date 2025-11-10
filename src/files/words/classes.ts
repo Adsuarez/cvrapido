@@ -1,4 +1,4 @@
-import { WORD_SELECTOR, Words } from "@/files/words/consts.ts";
+import { WORD_SELECTOR, Words } from "@/files/words/dictionaries.ts";
 import type { Languages } from "@/files/metadata/language-of-pdf.ts";
 
 class Word {
