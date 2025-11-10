@@ -6,11 +6,11 @@ import {
 } from "@/files/data-processing/conversion.ts";
 import { CertificationsWord, LanguagesWord } from "@/files/words/classes.ts";
 import { ContactWord } from "@/files/contact/contact-word.ts";
-import type { Languages } from "@/files/metadata/language-of-pdf.ts";
 import { SkillWord } from "@/files/skills/skills-word.ts";
 import { SummaryWord } from "@/files/summary/summary-word.ts";
 import { ERROR_MESSAGE } from "@/files/data-processing/errors.ts";
 import { ExperienceWord } from "@/files/experience/experience-word.ts";
+import type { Languages } from "@/files/words/dictionaries.ts";
 
 export async function getItems({
   pdfParsed,

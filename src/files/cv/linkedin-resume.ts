@@ -4,13 +4,13 @@ import type {
   LanguagesWord,
 } from "@/files/words/classes.ts";
 import type { ContactWord } from "@/files/contact/contact-word.ts";
-import type { Languages } from "@/files/metadata/language-of-pdf.ts";
 import type { SkillWord } from "@/files/skills/skills-word.ts";
 import type { SummaryWord } from "@/files/summary/summary-word.ts";
 import type { ContactItems } from "@/files/contact/contact.ts";
 import type { TopSkills } from "@/files/skills/top-skills.ts";
 import type { PersonalInformation } from "@/files/personal-information/personal-information.ts";
 import type { ExperienceWord } from "@/files/experience/experience-word.ts";
+import type { Languages } from "@/files/words/dictionaries.ts";
 
 class LinkedInResume {
   protected contact: ContactItems;
