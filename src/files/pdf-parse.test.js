@@ -23,7 +23,7 @@ describe("Reading linkedin resume", ()=>{
 describe("Reading a pdf non compatible with LinkedIn resume", ()=>{
   test("Should return an error string", async ()=>{
     const {data, error} = await parsePdf({url: "./public/example-fail1.pdf"})
-    
+      expect(data).toBeNull();
       expect(error).toMatch(ERROR_MESSAGE.NOT_IS_LINKEDIN);
     
   })
