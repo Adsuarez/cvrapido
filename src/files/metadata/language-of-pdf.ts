@@ -1,9 +1,4 @@
-import { CONTACT_WORD } from "@/files/contact/contact-word.ts";
-
-enum Languages {
-  English = "english",
-  Spanish = "spanish",
-}
+import { CONTACT_WORD, Languages } from "@/files/words/dictionaries.ts";
 
 class LanguageOfPdf {
   is: Languages | null = Languages.Spanish;
@@ -24,4 +19,4 @@ class LanguageOfPdf {
   }
 }
 
-export { LanguageOfPdf, Languages };
+export { LanguageOfPdf };
