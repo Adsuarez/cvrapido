@@ -1,8 +1,7 @@
-import { CONTACT_WORD } from "@/files/contact/contact-word.ts";
-import { Languages } from "@/files/metadata/language-of-pdf.ts";
-import { SKILL_WORD } from "@/files/skills/skills-word.ts";
-import { SUMMARY_WORD } from "@/files/summary/summary-word.ts";
-import { EXPERIENCE_WORD } from "@/files/experience/experience-word.ts";
+enum Languages {
+  English = "english",
+  Spanish = "spanish",
+}
 
 enum Words {
   Contact,
@@ -12,6 +11,16 @@ enum Words {
   Summary,
   Experience,
 }
+
+const CONTACT_WORD = {
+  [Languages.English]: "contact\n",
+  [Languages.Spanish]: "contactar\n",
+};
+
+const SKILL_WORD = {
+  [Languages.English]: "top skills\n",
+  [Languages.Spanish]: "aptitudes principales\n",
+};
 
 const LANGUAGE_WORD = {
   [Languages.English]: "languages\n",
@@ -23,6 +32,21 @@ const CERTIFICATIONS_WORD = {
   [Languages.Spanish]: "certificaciones\n",
 };
 
+const SUMMARY_WORD = {
+  [Languages.English]: "summary\n",
+  [Languages.Spanish]: "extracto\n",
+};
+
+const EXPERIENCE_WORD = {
+  [Languages.English]: "experience\n",
+  [Languages.Spanish]: "experiencia\n",
+};
+
+const MOBILE_WORD = {
+  [Languages.English]: "(Mobile)",
+  [Languages.Spanish]: "(Mobile)",
+};
+
 const WORD_SELECTOR = {
   [Words.Contact]: CONTACT_WORD,
   [Words.Skill]: SKILL_WORD,
@@ -32,4 +56,4 @@ const WORD_SELECTOR = {
   [Words.Experience]: EXPERIENCE_WORD,
 };
 
-export { Words, WORD_SELECTOR };
+export { Words, WORD_SELECTOR, Languages, CONTACT_WORD, MOBILE_WORD };

@@ -1,6 +1,5 @@
 import { Word } from "@/files/words/classes.ts";
-import { Words } from "@/files/words/dictionaries.ts";
-import { Languages } from "@/files/metadata/language-of-pdf.ts";
+import { Languages, Words } from "@/files/words/dictionaries.ts";
 
 class ContactWord extends Word {
   constructor({ language }: { language: Languages }) {
@@ -8,9 +7,4 @@ class ContactWord extends Word {
   }
 }
 
-const CONTACT_WORD = {
-  [Languages.English]: "contact\n",
-  [Languages.Spanish]: "contactar\n",
-};
-
-export { ContactWord, CONTACT_WORD };
+export { ContactWord };

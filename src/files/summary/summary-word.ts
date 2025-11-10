@@ -1,6 +1,5 @@
-import { Languages } from "@/files/metadata/language-of-pdf.ts";
 import { Word } from "@/files/words/classes.ts";
-import { Words } from "@/files/words/dictionaries.ts";
+import { Languages, Words } from "@/files/words/dictionaries.ts";
 
 class SummaryWord extends Word {
   constructor({ language }: { language: Languages }) {
@@ -8,9 +7,4 @@ class SummaryWord extends Word {
   }
 }
 
-const SUMMARY_WORD = {
-  [Languages.English]: "summary\n",
-  [Languages.Spanish]: "extracto\n",
-};
-
-export { SummaryWord, SUMMARY_WORD };
+export { SummaryWord };
