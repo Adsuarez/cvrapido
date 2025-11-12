@@ -13,6 +13,8 @@ import type { ContactItems } from "@/files/contact/contact.ts";
 import type { PersonalInformation } from "@/files/personal-information/personal-information.ts";
 import type { ExperienceWord } from "@/files/experience/experience-word.ts";
 import type { Languages } from "@/files/words/dictionaries.ts";
+import { experienceExtractor } from "../experience/experience-extractor";
+import type { EducationWord } from "../education/education-word";
 
 export function extractor({
   pdfParsed,
@@ -21,6 +23,7 @@ export function extractor({
   languagesWord,
   certificationsWord,
   experienceWord,
+  educationWord,
   summaryWord,
   language,
 }: {
@@ -30,6 +33,7 @@ export function extractor({
   certificationsWord: CertificationsWord;
   experienceWord: ExperienceWord;
   summaryWord: SummaryWord;
+  educationWord: EducationWord;
   pdfParsed: string;
   language: Languages;
 }) {
@@ -57,6 +61,16 @@ export function extractor({
 
   const experienceIndex = pdfParsed.search(experienceWord.regexp);
 
+  const educationIndex = pdfParsed.search(educationWord.regexp);
+
+  const { experience } = experienceExtractor({
+    pdfParsed,
+    experienceWord,
+    experienceIndex,
+    educationIndex,
+  });
+
+  console.log({ experience });
   const summaryIndex = pdfParsed.search(summaryWord.regexp);
 
   const personalInformation: PersonalInformation = personalInformationExtractor(
