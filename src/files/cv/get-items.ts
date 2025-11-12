@@ -11,6 +11,7 @@ import { SummaryWord } from "@/files/summary/summary-word.ts";
 import { ERROR_MESSAGE } from "@/files/data-processing/errors.ts";
 import { ExperienceWord } from "@/files/experience/experience-word.ts";
 import type { Languages } from "@/files/words/dictionaries.ts";
+import { EducationWord } from "../education/education-word";
 
 export async function getItems({
   pdfParsed,
@@ -26,6 +27,7 @@ export async function getItems({
     const certificationsWord = new CertificationsWord({ language });
     const summaryWord = new SummaryWord({ language });
     const experienceWord = new ExperienceWord({ language });
+    const educationWord = new EducationWord({ language });
     const linkedinResume = new LinkedInResume({
       contactWord,
       skillWord,
@@ -33,6 +35,7 @@ export async function getItems({
       certificationsWord,
       experienceWord,
       summaryWord,
+      educationWord,
       pdfParsed,
       language,
     });
