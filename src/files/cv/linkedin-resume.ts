@@ -11,13 +11,14 @@ import type { TopSkills } from "@/files/skills/top-skills.ts";
 import type { PersonalInformation } from "@/files/personal-information/personal-information.ts";
 import type { ExperienceWord } from "@/files/experience/experience-word.ts";
 import type { Languages } from "@/files/words/dictionaries.ts";
-import type { EducationWord } from "../education/education-word";
+import type { EducationWord } from "@/files/education/education-word.ts";
+import type { Summary } from "@/files/summary/summary.ts";
 
 class LinkedInResume {
   protected contact: ContactItems;
   protected topSkills: TopSkills;
   protected personalInformation: PersonalInformation;
-  protected summary: string;
+  protected summary: Summary;
 
   constructor({
     contactWord,
