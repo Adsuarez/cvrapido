@@ -11,6 +11,7 @@ import type { TopSkills } from "@/files/skills/top-skills.ts";
 import type { PersonalInformation } from "@/files/personal-information/personal-information.ts";
 import type { ExperienceWord } from "@/files/experience/experience-word.ts";
 import type { Languages } from "@/files/words/dictionaries.ts";
+import type { EducationWord } from "../education/education-word";
 
 class LinkedInResume {
   protected contact: ContactItems;
@@ -25,6 +26,7 @@ class LinkedInResume {
     certificationsWord,
     experienceWord,
     summaryWord,
+    educationWord,
     pdfParsed,
     language,
   }: {
@@ -34,6 +36,7 @@ class LinkedInResume {
     certificationsWord: CertificationsWord;
     experienceWord: ExperienceWord;
     summaryWord: SummaryWord;
+    educationWord: EducationWord;
     pdfParsed: string;
     language: Languages;
   }) {
@@ -44,6 +47,7 @@ class LinkedInResume {
       languagesWord,
       certificationsWord,
       experienceWord,
+      educationWord,
       summaryWord,
       language,
     });
