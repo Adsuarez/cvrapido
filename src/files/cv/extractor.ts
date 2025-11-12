@@ -13,8 +13,9 @@ import type { ContactItems } from "@/files/contact/contact.ts";
 import type { PersonalInformation } from "@/files/personal-information/personal-information.ts";
 import type { ExperienceWord } from "@/files/experience/experience-word.ts";
 import type { Languages } from "@/files/words/dictionaries.ts";
-import { experienceExtractor } from "../experience/experience-extractor";
-import type { EducationWord } from "../education/education-word";
+import { experienceExtractor } from "@/files/experience/experience-extractor.ts";
+import type { EducationWord } from "@/files/education/education-word.ts";
+import type { Summary } from "@/files/summary/summary.ts";
 
 export function extractor({
   pdfParsed,
@@ -83,7 +84,7 @@ export function extractor({
     }
   );
 
-  const summary = summaryExtractor({
+  const summary: Summary = summaryExtractor({
     pdfParsed,
     experienceIndex,
     summaryIndex,
