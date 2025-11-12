@@ -10,6 +10,7 @@ enum Words {
   Certifications,
   Summary,
   Experience,
+  Education,
 }
 
 const CONTACT_WORD = {
@@ -42,6 +43,11 @@ const EXPERIENCE_WORD = {
   [Languages.Spanish]: "experiencia\n",
 };
 
+const EDUCATION_WORD = {
+  [Languages.English]: "education\n",
+  [Languages.Spanish]: "educación\n",
+};
+
 const MOBILE_WORD = {
   [Languages.English]: "(Mobile)",
   [Languages.Spanish]: "(Mobile)",
@@ -54,6 +60,7 @@ const WORD_SELECTOR = {
   [Words.Certifications]: CERTIFICATIONS_WORD,
   [Words.Summary]: SUMMARY_WORD,
   [Words.Experience]: EXPERIENCE_WORD,
+  [Words.Education]: EDUCATION_WORD,
 };
 
 export { Words, WORD_SELECTOR, Languages, CONTACT_WORD, MOBILE_WORD };
