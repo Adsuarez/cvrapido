@@ -1,4 +1,5 @@
 import type { SummaryWord } from "@/files/summary/summary-word.ts";
+import type { Summary } from "@/files/summary/summary.ts";
 
 export function summaryExtractor({
   pdfParsed,
@@ -11,7 +12,7 @@ export function summaryExtractor({
   summaryWord: SummaryWord;
   experienceIndex: number;
 }) {
-  let summary = "";
+  let summary: Summary = "";
 
   const hasSummary = summaryIndex >= 0 ? true : false;
 
